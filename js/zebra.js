@@ -46,7 +46,7 @@ function selectScanner() {
 }
 
 function getAvailableScannerNames() {
-    EloZebraBarcodeManager.getAvailableScannerNames();
+    document.getElementById("textField").value = EloZebraBarcodeManager.getAvailableScannerNames();
 }
 
 
