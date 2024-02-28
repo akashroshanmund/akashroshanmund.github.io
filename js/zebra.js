@@ -6,6 +6,8 @@ document.getElementById("isZebraBarcodeConnected").addEventListener("click", isZ
 document.getElementById("enableZebraBarcode").addEventListener("click", enableZebraBarcode);
 document.getElementById("disableZebraBarcode").addEventListener("click", disableZebraBarcode);
 document.getElementById("scanZebraBarcode").addEventListener("click", scanZebraBarcode);
+document.getElementById("selectScanner").addEventListener("click", selectScanner);
+document.getElementById("getAvailableScannerNames").addEventListener("click", getAvailableScannerNames);
 
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
@@ -38,4 +40,13 @@ function scanZebraBarcode() {
 function ZBCRCallback(type, data) {
     document.getElementById("textField").value = data;
 }
+
+function selectScanner() {
+    EloZebraBarcodeManager.selectScanner();
+}
+
+function getAvailableScannerNames() {
+    EloZebraBarcodeManager.getAvailableScannerNames();
+}
+
 
