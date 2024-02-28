@@ -42,7 +42,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    EloZebraBarcodeManager.selectScanner();
+    EloZebraBarcodeManager.selectScanner(document.getElementById("scannerName").value);
 }
 
 function getAvailableScannerNames() {
