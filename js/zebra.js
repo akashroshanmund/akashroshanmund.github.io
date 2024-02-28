@@ -20,7 +20,7 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = "Hoe hoe"
+    document.getElementById("textField").value = 'test'
 }
 
 function enableZebraBarcode() {
