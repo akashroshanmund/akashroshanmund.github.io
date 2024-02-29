@@ -23,12 +23,10 @@ function unregisterZebraBarcodeListener() {
 
 function isZebraBarcodeConnected() {
     EloZebraBarcodeManager.isZebraBarcodeConnected();
-    document.getElementById("textField").value = "helloo"
-    
 }
 
 function enableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcode();
+    document.getElementById("textField").value = "helloo";
 }
 
 function disableZebraBarcode() {
@@ -44,7 +42,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    EloZebraBarcodeManager.selectScanner("PL5000:S22334523071218 ");
+    EloZebraBarcodeManager.selectScanner("PL5000:S22281523073514 ");
 }
 
 function getAvailableScannerNames() {
