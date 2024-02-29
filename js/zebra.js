@@ -26,11 +26,11 @@ function isZebraBarcodeConnected() {
 }
 
 function enableZebraBarcode() {
-    EloZebraBarcodeManager.enableZebraBarcode();
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcode();
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
+    document.getElementById("textField").value = document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
 }
 
 function scanZebraBarcode() {
