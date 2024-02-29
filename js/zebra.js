@@ -22,7 +22,9 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = "false";
+    EloZebraBarcodeManager.isZebraBarcodeConnected();
+    document.getElementById("textField").value = "helloo"
+    
 }
 
 function enableZebraBarcode() {
