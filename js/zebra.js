@@ -18,7 +18,7 @@ function registerZebraBarcodeListener() {
 }
 
 function unregisterZebraBarcodeListener() {
-    document.getElementById("textField").value = "helloo";
+    document.getElementById("textField").value = "hel32loo";
 }
 
 function isZebraBarcodeConnected() {
@@ -30,7 +30,7 @@ function enableZebraBarcode() {
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
 }
 
 function scanZebraBarcode() {
