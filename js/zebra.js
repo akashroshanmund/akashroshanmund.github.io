@@ -22,7 +22,7 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = document.getElementById("scannerName").value;
+    document.getElementById("textField").value = "true";
 }
 
 function enableZebraBarcode() {
