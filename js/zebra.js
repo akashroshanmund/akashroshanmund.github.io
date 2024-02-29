@@ -18,15 +18,15 @@ function registerZebraBarcodeListener() {
 }
 
 function unregisterZebraBarcodeListener() {
-    EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+    document.getElementById("textField").value = "helloo";
 }
 
 function isZebraBarcodeConnected() {
-    EloZebraBarcodeManager.isZebraBarcodeConnected();
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnected();
 }
 
 function enableZebraBarcode() {
-    document.getElementById("textField").value = "helloo";
+    EloZebraBarcodeManager.enableZebraBarcode();
 }
 
 function disableZebraBarcode() {
