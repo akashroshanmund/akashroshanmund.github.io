@@ -22,7 +22,7 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = "true";
+    document.getElementById("textField").value = "false";
 }
 
 function enableZebraBarcode() {
@@ -42,7 +42,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    EloZebraBarcodeManager.selectScanner("SE2707:20260523434024  ");
+    EloZebraBarcodeManager.selectScanner("PL5000:S22334523071218 ");
 }
 
 function getAvailableScannerNames() {
