@@ -9,6 +9,13 @@ document.getElementById("scanZebraBarcode").addEventListener("click", scanZebraB
 document.getElementById("selectScanner").addEventListener("click", selectScanner);
 document.getElementById("getAvailableScannerNames").addEventListener("click", getAvailableScannerNames);
 
+document.getElementById("isZebraBarcodeConnectedBySerialNumber").addEventListener("click", isZebraBarcodeConnectedBySerialNumber);
+document.getElementById("enableZebraBarcodeBySerialNumber").addEventListener("click", enableZebraBarcodeBySerialNumber);
+document.getElementById("disableZebraBarcodeBySerialNumber").addEventListener("click", disableZebraBarcodeBySerialNumber);
+document.getElementById("scanZebraBarcodeBySerialNumber").addEventListener("click", scanZebraBarcodeBySerialNumber);
+document.getElementById("getZebraConnectedScanners").addEventListener("click", getZebraConnectedScanners);
+document.getElementById("getZebraEnabledScanners").addEventListener("click", getZebraEnabledScanners);
+
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
@@ -49,4 +56,33 @@ function getAvailableScannerNames() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getAvailableScannerNames();
 }
 
+
+
+
+
+
+function isZebraBarcodeConnectedBySerialNumber() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("PL5000:S22281523073514 ");
+}
+
+function enableZebraBarcodeBySerialNumber() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber();
+}
+
+function disableZebraBarcodeBySerialNumber() {
+    EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber();
+}
+
+
+function scanZebraBarcodeBySerialNumber() {
+    EloZebraBarcodeManager.scanZebraBarcodeBySerialNumber("PL5000:S22281523073514 ");
+}
+
+function getZebraConnectedScanners() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
+}
+
+function getZebraEnabledScanners() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
+}
 
