@@ -62,20 +62,20 @@ function getAvailableScannerNames() {
 
 
 function isZebraBarcodeConnectedBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("PL5000:S22281523073514 ");
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("S22334523071218");
 }
 
 function enableZebraBarcodeBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber();
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22334523071218");
 }
 
 function disableZebraBarcodeBySerialNumber() {
-    EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber();
+    EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22334523071218");
 }
 
 
 function scanZebraBarcodeBySerialNumber() {
-    EloZebraBarcodeManager.scanZebraBarcodeBySerialNumber("PL5000:S22281523073514 ");
+    EloZebraBarcodeManager.scanZebraBarcodeBySerialNumber("S22334523071218");
 }
 
 function getZebraConnectedScanners() {
