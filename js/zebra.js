@@ -29,15 +29,15 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnected();
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("S22281523073514");
 }
 
 function enableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcode();
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22281523073514");
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22281523073514");
 }
 
 function scanZebraBarcode() {
