@@ -49,7 +49,7 @@ function ZBCRCallback(type, data, serialNumber) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "done";
+    document.getElementById("textField").value = "1234";
 }
 
 function getAvailableScannerNames() {
