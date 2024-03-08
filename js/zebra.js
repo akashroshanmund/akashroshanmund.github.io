@@ -44,12 +44,12 @@ function scanZebraBarcode() {
     EloZebraBarcodeManager.scanZebraBarcode();
 }
 
-function ZBCRCallback(type, data) {
-    document.getElementById("textField").value = data;
+function ZBCRCallback(type, data, serialNumber) {
+    document.getElementById("textField").value = serialNumber;
 }
 
 function selectScanner() {
-    EloZebraBarcodeManager.selectScanner("PL5000:S22281523073514 ");
+    document.getElementById("textField").value = "done";
 }
 
 function getAvailableScannerNames() {
