@@ -42,12 +42,12 @@ function scanZebraBarcode() {
     EloZebraBarcodeManager.scanZebraBarcode();
 }
 
-function ZBCRCallback(type, data, serialNumber) {
-    document.getElementById("textField").value = serialNumber;
+function ZBCRCallback(type, data) {
+    document.getElementById("textField").value = data;
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "1636";
+    document.getElementById("textField").value = "18766";
 }
 
 
