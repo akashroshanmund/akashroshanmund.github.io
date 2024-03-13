@@ -70,6 +70,9 @@ function scanZebraBarcodeBySerialNumber() {
 
 function getZebraConnectedScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
+    addSerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+    addSerialNumber("S22281523073514");
+    
 }
 
 function getZebraEnabledScanners() {
@@ -77,7 +80,17 @@ function getZebraEnabledScanners() {
 }
 
 function displaySerialNumber(serialNumber){
+    document.getElementById("scannerSerialNumber").value = serialNumber;
 }
-function listSerialNumber(serialNumbers){
-    var ul = document.getElementById
+function addSerialNumber(serialNumber){
+    var ul = document.getElementById('serialNumberList');
+    var li = document.createElement('li');
+    var span = document.createElement('span');
+    span.textContent = serialNumber;
+    span.className = 'clickable';
+    span.onclick = function(){
+        displaySerialNumber(serialNumber);
+    }
+    li.appendChild(span);
+    ul.appendChild(li);
 }
