@@ -70,6 +70,7 @@ function scanZebraBarcodeBySerialNumber() {
 
 function getZebraConnectedScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
+     document.getElementById('serialNumberList').innerHTML = '';
     addSerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
     addSerialNumber("S22281523073514");
     
