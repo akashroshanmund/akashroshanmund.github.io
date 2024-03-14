@@ -28,15 +28,15 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("S22281523073514");
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
 }
 
 function enableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22281523073514");
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22281523073514");
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
 }
 
 function scanZebraBarcode() {
@@ -48,7 +48,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "18766";
+    document.getElementById("textField").value = "WWERWEF";
 }
 
 
