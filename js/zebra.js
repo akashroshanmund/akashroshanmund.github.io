@@ -24,7 +24,7 @@ function registerZebraBarcodeListener() {
 }
 
 function unregisterZebraBarcodeListener() {
-    document.getElementById("textField").value = "hel32loo";
+    EloZebraBarcodeManager.unregisterZebraBarcodeListener();
 }
 
 function isZebraBarcodeConnected() {
