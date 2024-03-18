@@ -28,15 +28,15 @@ function unregisterZebraBarcodeListener() {
 }
 
 function isZebraBarcodeConnected() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnected();
 }
 
 function enableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcode();
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
 }
 
 function scanZebraBarcode() {
