@@ -48,7 +48,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "sfdgfwe";
+    document.getElementById("textField").value = "sfodgfwe";
 }
 
 
