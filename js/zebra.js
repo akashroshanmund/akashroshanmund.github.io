@@ -50,7 +50,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "5245";
+    document.getElementById("textField").value = "oiuojkn";
 }
 
 
