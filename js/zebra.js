@@ -15,6 +15,8 @@ document.getElementById("scanZebraBarcodeBySerialNumber").addEventListener("clic
 document.getElementById("getZebraConnectedScanners").addEventListener("click", getZebraConnectedScanners);
 document.getElementById("getZebraEnabledScanners").addEventListener("click", getZebraEnabledScanners);
 
+document.getElementById("enableScanner1").addEventListener("click", enableZebraBarcodeBySerialNumber1);
+document.getElementById("disableScanner1").addEventListener("click", disableZebraBarcodeBySerialNumber1);
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
@@ -32,11 +34,11 @@ function isZebraBarcodeConnected() {
 }
 
 function enableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcode();
+     document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22334523071218");
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22334523071218");
 }
 
 function scanZebraBarcode() {
@@ -48,7 +50,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "sfodgfwe";
+    document.getElementById("textField").value = "12343";
 }
 
 
@@ -63,6 +65,15 @@ function enableZebraBarcodeBySerialNumber() {
 function disableZebraBarcodeBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
+
+function enableZebraBarcodeBySerialNumber1() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22334523071218");
+}
+
+function disableZebraBarcodeBySerialNumber1() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22334523071218");
+}
+
 
 function scanZebraBarcodeBySerialNumber() {
     EloZebraBarcodeManager.scanZebraBarcodeBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
