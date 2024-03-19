@@ -50,7 +50,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "12314";
+    document.getElementById("textField").value = "5245";
 }
 
 
@@ -67,11 +67,11 @@ function disableZebraBarcodeBySerialNumber() {
 }
 
 function enableZebraBarcodeBySerialNumber1() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22334523071218");
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
 }
 
 function disableZebraBarcodeBySerialNumber1() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22334523071218");
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
 }
 
 
