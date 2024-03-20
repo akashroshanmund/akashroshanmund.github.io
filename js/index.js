@@ -156,6 +156,7 @@ function onZebraReady(serviceBound){
   }
   else{
     document.getElementById("ZebraHeader").style.color = COLOR_RED
+    document.getElementById("zebraBarcodeConnected").innerHTML = "chaluche";
   }
 }
 
