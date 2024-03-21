@@ -17,6 +17,7 @@ document.getElementById("getZebraEnabledScanners").addEventListener("click", get
 
 document.getElementById("enableScanner1").addEventListener("click", enableZebraBarcodeBySerialNumber1);
 document.getElementById("disableScanner1").addEventListener("click", disableZebraBarcodeBySerialNumber1);
+document.getElementById("hotPlugPreprocessing").addEventListener("click", hotPlugPreprocessing);
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
@@ -50,7 +51,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "oiuojkn";
+    document.getElementById("textField").value = "oius1212ojkn";
 }
 
 
@@ -78,7 +79,9 @@ function disableZebraBarcodeBySerialNumber1() {
 function scanZebraBarcodeBySerialNumber() {
     EloZebraBarcodeManager.scanZebraBarcodeBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
-
+function hotPlugPreprocessing() {
+    EloZebraBarcodeManager.hotPlugPreprocessing();
+}
 function getZebraConnectedScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
      document.getElementById('serialNumberList').innerHTML = '';
@@ -87,6 +90,7 @@ function getZebraConnectedScanners() {
     
     
 }
+
 
 function getZebraEnabledScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
