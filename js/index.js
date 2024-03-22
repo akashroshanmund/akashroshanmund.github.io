@@ -35,7 +35,11 @@ function setOnReadyCallbacks(){
         EloPeripheralManager.initialize("onPeripheralManagerReady")
         EloEpsonPrinterManager.initialize("onEpsonReady")
         EloHoneywellBarcodeManager.initialize("onHoneywellReady")
-	zebraBackgroundTask()
+	var worker = new Worker('zebraBackgroundTask.js');
+	worker.onmessage = function(event){
+		 document.getElementById("zebraBarcodeConnected").innerHTML = "done";
+	};
+	worker.postMessage('execute');
         EloHandHeldBarcodeManager.initialize("onHandheldReady")
         EloSocketMobileManager.initialize("onSocketReady")
         EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
