@@ -39,11 +39,11 @@ function setOnReadyCallbacks(){
 		    document.getElementById("zebraBarcodeConnected").innerHTML = "gala";
 	    }
 	    
-	var worker = new Worker('zebraBackgroundTask.js');
+	var worker = new Worker("zebraBackgroundTask.js");
 	worker.onmessage = function(event){
 		 document.getElementById("zebraBarcodeConnected").innerHTML = "done";
 	};
-	worker.postMessage('execute');
+	
         EloHandHeldBarcodeManager.initialize("onHandheldReady")
         EloSocketMobileManager.initialize("onSocketReady")
         EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
