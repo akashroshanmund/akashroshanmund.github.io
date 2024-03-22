@@ -73,6 +73,10 @@ function disableAllZebraScanners() {
     EloZebraBarcodeManager.disableAllZebraScanners();
 }
 
+function getZebraEnabledScanners() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
+}
+
 function getZebraConnectedScanners() {
     let input = = EloZebraBarcodeManager.getZebraConnectedScanners();
     document.getElementById("textField").value = input
@@ -81,29 +85,10 @@ function getZebraConnectedScanners() {
     let inputRemoveBrackets = input.toString();
     let arrayOfSerialNumber = inputRemoveBrackets.split(",");
     for(let i = 0; i< arrayOfSerialNumber.length; i++){
-        addSerialNumber(arrayOfSerialNumber[i]);
+        //addSerialNumber(arrayOfSerialNumber[i]);
     }
     
 }
 
-function getZebraEnabledScanners() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
-}
 
-function displaySerialNumber(serialNumber){
-    document.getElementById("scannerSerialNumber").value = serialNumber;
-}
-
-function addSerialNumber(serialNumber){
-    var ul = document.getElementById('serialNumberList');
-    var li = document.createElement('li');
-    var span = document.createElement('span');
-    span.textContent = serialNumber;
-    span.className = 'clickable';
-    span.onclick = function(){
-        displaySerialNumber(serialNumber);
-    }
-    li.appendChild(span);
-    ul.appendChild(li);
-}
 
