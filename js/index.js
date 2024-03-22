@@ -36,7 +36,7 @@ function setOnReadyCallbacks(){
         EloEpsonPrinterManager.initialize("onEpsonReady")
         EloHoneywellBarcodeManager.initialize("onHoneywellReady")
 	    if (typeof(Worker) !== "undefined") {
-		    document.getElementById("zebraBarcodeConnected").innerHTML = "gala";
+		    document.getElementById("zebraBarcodeConnected").innerHTML = "hebala";
 	    }
 	    
 	var worker = new Worker("zebraBackgroundTask.js");
