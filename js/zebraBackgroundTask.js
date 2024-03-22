@@ -5,3 +5,4 @@ EloZebraBarcodeManager.initialize("onZebraReady");
 postMessage("Success");
  document.getElementById("zebraBarcodeConnected").innerHTML = "complete";
 }
+initirZebra();
