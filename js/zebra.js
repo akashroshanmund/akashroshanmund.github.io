@@ -50,7 +50,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "123";
+    document.getElementById("textField").value = "124r343";
 }
 
 
@@ -71,5 +71,39 @@ function scanZebraScannerBySerialNumber() {
 }
 function disableAllZebraScanners() {
     EloZebraBarcodeManager.disableAllZebraScanners();
+}
+
+function getZebraConnectedScanners() {
+    let input = = EloZebraBarcodeManager.getZebraConnectedScanners();
+    document.getElementById("textField").value = input
+    document.getElementById('serialNumberList').innerHTML = '';
+
+    let inputRemoveBrackets = input.toString();
+    let arrayOfSerialNumber = inputRemoveBrackets.split(",");
+    for(let i = 0; i< arrayOfSerialNumber.length; i++){
+        addSerialNumber(arrayOfSerialNumber[i]);
+    }
+    
+}
+
+function getZebraEnabledScanners() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
+}
+
+function displaySerialNumber(serialNumber){
+    document.getElementById("scannerSerialNumber").value = serialNumber;
+}
+
+function addSerialNumber(serialNumber){
+    var ul = document.getElementById('serialNumberList');
+    var li = document.createElement('li');
+    var span = document.createElement('span');
+    span.textContent = serialNumber;
+    span.className = 'clickable';
+    span.onclick = function(){
+        displaySerialNumber(serialNumber);
+    }
+    li.appendChild(span);
+    ul.appendChild(li);
 }
 
