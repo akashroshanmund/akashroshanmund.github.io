@@ -8,16 +8,13 @@ document.getElementById("disableZebraBarcode").addEventListener("click", disable
 document.getElementById("scanZebraBarcode").addEventListener("click", scanZebraBarcode);
 document.getElementById("selectScanner").addEventListener("click", selectScanner);
 
-document.getElementById("isZebraBarcodeConnectedBySerialNumber").addEventListener("click", isZebraBarcodeConnectedBySerialNumber);
-document.getElementById("enableZebraBarcodeBySerialNumber").addEventListener("click", enableZebraBarcodeBySerialNumber);
-document.getElementById("disableZebraBarcodeBySerialNumber").addEventListener("click", disableZebraBarcodeBySerialNumber);
-document.getElementById("scanZebraBarcodeBySerialNumber").addEventListener("click", scanZebraBarcodeBySerialNumber);
+document.getElementById("isZebraScannerEnabledBySerialNumber").addEventListener("click", isZebraScannerEnabledBySerialNumber);
+document.getElementById("enableZebraScannerBySerialNumber").addEventListener("click", enableZebraScannerBySerialNumber);
+document.getElementById("disableZebraScannerBySerialNumber").addEventListener("click", disableZebraScannerBySerialNumber);
+document.getElementById("scanZebraScannerBySerialNumber").addEventListener("click", scanZebraScannerBySerialNumber);
 document.getElementById("getZebraConnectedScanners").addEventListener("click", getZebraConnectedScanners);
 document.getElementById("getZebraEnabledScanners").addEventListener("click", getZebraEnabledScanners);
-
-document.getElementById("enableScanner1").addEventListener("click", enableZebraBarcodeBySerialNumber1);
-document.getElementById("disableScanner1").addEventListener("click", disableZebraBarcodeBySerialNumber1);
-document.getElementById("hotPlugPreprocessing").addEventListener("click", hotPlugPreprocessing);
+document.getElementById("disableAllZebraScanners").addEventListener("click", disableAllZebraScanners);
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
@@ -55,16 +52,16 @@ function selectScanner() {
 }
 
 
-function isZebraBarcodeConnectedBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraBarcodeConnectedBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+function isZebraScannerConnectedBySerialNumber() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerConnectedBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
 
-function enableZebraBarcodeBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+function enableZebraScannerBySerialNumber() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
 
-function disableZebraBarcodeBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+function disableZebraScannerBySerialNumber() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
 
 function enableZebraBarcodeBySerialNumber1() {
@@ -76,11 +73,11 @@ function disableZebraBarcodeBySerialNumber1() {
 }
 
 
-function scanZebraBarcodeBySerialNumber() {
-    EloZebraBarcodeManager.scanZebraBarcodeBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+function scanZebraScannerBySerialNumber() {
+    EloZebraBarcodeManager.scanZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
-function hotPlugPreprocessing() {
-    EloZebraBarcodeManager.disableAllScanners();
+function disableAllZebraScanners() {
+    EloZebraBarcodeManager.disableAllZebraScanners();
 }
 function getZebraConnectedScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
