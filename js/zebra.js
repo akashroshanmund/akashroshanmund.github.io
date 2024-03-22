@@ -77,6 +77,13 @@ function getZebraEnabledScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
 }
 
+function getZebraConnectedScanners() {
+    let input = = EloZebraBarcodeManager.getZebraConnectedScanners();
+    document.getElementById("textField").value = input
+    document.getElementById('serialNumberList').innerHTML = '';
+
+    
+}
 
 
 
