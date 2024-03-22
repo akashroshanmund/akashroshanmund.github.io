@@ -1,4 +1,4 @@
-function initiZebra()
+function initirZebra()
 {
    document.getElementById("zebraBarcodeConnected").innerHTML = "hela";
 EloZebraBarcodeManager.initialize("onZebraReady");
