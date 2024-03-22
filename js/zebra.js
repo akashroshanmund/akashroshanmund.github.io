@@ -71,10 +71,16 @@ function disableAllZebraScanners() {
     EloZebraBarcodeManager.disableAllZebraScanners();
 }
 function getZebraConnectedScanners() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
+    let input = = EloZebraBarcodeManager.getZebraConnectedScanners();
+    document.getElementById("textField").value = input
     document.getElementById('serialNumberList').innerHTML = '';
-    addSerialNumber("S22281523073514");
-    addSerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+
+    let inputRemoveBrackets = input.slice(1,-1);
+    let arrayOfSerialNumber = inputRemoveBrackets.split(",");
+    for(let i = 0; i< arrayOfSerialNumber.length; i++){
+        addSerialNumber(arrayOfSerialNumber[i]);
+    }
+    
 }
 
 function getZebraEnabledScanners() {
