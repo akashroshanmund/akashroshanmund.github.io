@@ -52,8 +52,8 @@ function selectScanner() {
 }
 
 
-function isZebraScannerConnectedBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerConnectedBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+function isZebraScannerEnabledBySerialNumber() {
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerEnabledBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
 
 function enableZebraScannerBySerialNumber() {
