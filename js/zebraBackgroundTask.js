@@ -1,6 +1,7 @@
-self.onmessage = function(event) {
+function initiZebra()
+{
    document.getElementById("zebraBarcodeConnected").innerHTML = "started";
-  EloZebraBarcodeManager.initialize("onZebraReady");
-  self.postMessage("Success");
-   document.getElementById("zebraBarcodeConnected").innerHTML = "complete";
-};
+EloZebraBarcodeManager.initialize("onZebraReady");
+postMessage("Success");
+ document.getElementById("zebraBarcodeConnected").innerHTML = "complete";
+}
