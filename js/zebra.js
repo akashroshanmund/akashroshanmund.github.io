@@ -48,24 +48,24 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "oius1212ojkn";
+    document.getElementById("textField").value = "12345";
 }
 
 
 function isZebraScannerEnabledBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerEnabledBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerEnabledBySerialNumber(document.getElementById("scannerSerialNumber").value);
 }
 
 function enableZebraScannerBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraScannerBySerialNumber(document.getElementById("scannerSerialNumber").value);
 }
 
 function disableZebraScannerBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraScannerBySerialNumber(document.getElementById("scannerSerialNumber").value);
 }
 
 function scanZebraScannerBySerialNumber() {
-    EloZebraBarcodeManager.scanZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
+    EloZebraBarcodeManager.scanZebraScannerBySerialNumber(document.getElementById("scannerSerialNumber").value);
 }
 function disableAllZebraScanners() {
     EloZebraBarcodeManager.disableAllZebraScanners();
