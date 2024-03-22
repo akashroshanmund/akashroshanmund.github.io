@@ -50,7 +50,7 @@ function ZBCRCallback(type, data) {
 }
 
 function selectScanner() {
-    document.getElementById("textField").value = "12452113";
+    document.getElementById("textField").value = "113";
 }
 
 
@@ -95,7 +95,7 @@ function getZebraEnabledScanners() {
 }
 
 function displaySerialNumber(serialNumber){
-    document.getElementById("scannerSerialNumber").value = serialNumber;
+    document.getElementById("scannerSerialNumber").innerHTML = serialNumber;
 }
 
 function addSerialNumber(serialNumber){
