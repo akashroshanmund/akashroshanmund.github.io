@@ -32,11 +32,11 @@ function isZebraBarcodeConnected() {
 }
 
 function enableZebraBarcode() {
-     document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S22281523073514");
+     document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcode();
 }
 
 function disableZebraBarcode() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S22281523073514");
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcode();
 }
 
 function scanZebraBarcode() {
@@ -87,7 +87,6 @@ function getZebraConnectedScanners() {
     
     
 }
-
 
 function getZebraEnabledScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
