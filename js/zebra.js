@@ -64,15 +64,6 @@ function disableZebraScannerBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
 
-function enableZebraBarcodeBySerialNumber1() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.enableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
-}
-
-function disableZebraBarcodeBySerialNumber1() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraBarcodeBySerialNumber("S/N:FE369D7CEDCC834FB6581A8BB9B5DBA6 Rev:PAAAOS00-004-R02-9");
-}
-
-
 function scanZebraScannerBySerialNumber() {
     EloZebraBarcodeManager.scanZebraScannerBySerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
 }
@@ -81,11 +72,9 @@ function disableAllZebraScanners() {
 }
 function getZebraConnectedScanners() {
     document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
-     document.getElementById('serialNumberList').innerHTML = '';
+    document.getElementById('serialNumberList').innerHTML = '';
     addSerialNumber("S22281523073514");
     addSerialNumber("S/N:E9F15329524B70498D7E95B374FAF176:9");
-    
-    
 }
 
 function getZebraEnabledScanners() {
@@ -95,6 +84,7 @@ function getZebraEnabledScanners() {
 function displaySerialNumber(serialNumber){
     document.getElementById("scannerSerialNumber").value = serialNumber;
 }
+
 function addSerialNumber(serialNumber){
     var ul = document.getElementById('serialNumberList');
     var li = document.createElement('li');
