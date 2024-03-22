@@ -145,7 +145,7 @@ function onHoneywellReady(serviceBound){
 function onZebraReady(serviceBound){
   if (serviceBound === "true"){
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
-
+	  document.getElementById("textField").value = EloZebraBarcodeManager.getZebraConnectedScanners();
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
     if(zebraAvailable == true){
