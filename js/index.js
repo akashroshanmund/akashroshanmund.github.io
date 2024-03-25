@@ -32,7 +32,7 @@ var workerCode = `
       postMessage(i);
       setTimeout(timedCount, 500);
     }
-    console.log("hello");
+    console.log("hesdfsdfllo");
 
     timedCount();
 `;
