@@ -14,8 +14,8 @@ document.getElementById("getZebraConnectedScanners").addEventListener("click", g
 document.getElementById("getZebraEnabledScanners").addEventListener("click", getZebraEnabledScanners);
 document.getElementById("disableAllZebraScanners").addEventListener("click", disableAllZebraScanners);
 
-document.getElementById("registerZebraAttachedListener").addEventListener("click", registerZebraAttachedListener);
-document.getElementById("unregisterZebraAttachedListener").addEventListener("click", unregisterZebraAttachedListener);
+document.getElementById("registerZebraAttachedListener").addEventListener("click", registerScannerStateListener);
+document.getElementById("unregisterZebraAttachedListener").addEventListener("click", unregisterScannerStateListener);
 
 
 function initZebraBarcode() {
@@ -30,12 +30,12 @@ function unregisterZebraBarcodeListener() {
     EloZebraBarcodeManager.unregisterZebraBarcodeListener();
 }
 
-function registerZebraAttachedListener() {
-    EloZebraBarcodeManager.registerZebraAttachedListener("ZBCRAttachedCallBack");
+function registerScannerStateListener() {
+    EloZebraBarcodeManager.registerScannerStateListener("ZBCRAttachedCallBack");
 }
 
-function unregisterZebraAttachedListener() {
-    EloZebraBarcodeManager.unregisterZebraAttachedListener();
+function unregisterScannerStateListener() {
+    EloZebraBarcodeManager.unregisterScannerStateListener();
 }
 
 function isZebraBarcodeConnected() {
