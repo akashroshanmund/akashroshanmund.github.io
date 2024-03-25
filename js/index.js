@@ -24,7 +24,7 @@ document.getElementById("set_cd_voltage").addEventListener("click", setCDVoltage
 
 const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
-var workerCode = 'EloZebraBarcodeManager.initialize("onZebraReady");';
+var workerCode = 'EloZebraBarcodeManager.initialize("onZebraReady")'
 
 window.onload = function() {
   setOnReadyCallbacks()
