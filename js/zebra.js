@@ -6,7 +6,6 @@ document.getElementById("isZebraBarcodeConnected").addEventListener("click", isZ
 document.getElementById("enableZebraBarcode").addEventListener("click", enableZebraBarcode);
 document.getElementById("disableZebraBarcode").addEventListener("click", disableZebraBarcode);
 document.getElementById("scanZebraBarcode").addEventListener("click", scanZebraBarcode);
-
 document.getElementById("isZebraScannerEnabledBySerialNumber").addEventListener("click", isZebraScannerEnabledBySerialNumber);
 document.getElementById("enableZebraScannerBySerialNumber").addEventListener("click", enableZebraScannerBySerialNumber);
 document.getElementById("disableZebraScannerBySerialNumber").addEventListener("click", disableZebraScannerBySerialNumber);
