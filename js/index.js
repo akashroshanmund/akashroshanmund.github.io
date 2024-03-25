@@ -48,7 +48,26 @@ function setOnReadyCallbacks(){
         EloPeripheralManager.initialize("onPeripheralManagerReady")
         EloEpsonPrinterManager.initialize("onEpsonReady")
         EloHoneywellBarcodeManager.initialize("onHoneywellReady")
-	initializeZebraScanners();
+	
+
+	    var blob = new Blob([workerCode], { type: "application/javascript" });
+	
+	// Create a URL for the Blob
+	var blobUrl = URL.createObjectURL(blob);
+	
+	// Use blobUrl as the worker script URL when creating the Worker
+	var worker = new Worker(blobUrl);
+	
+	// Handle messages from the worker
+	worker.onmessage = function(event) {
+		document.getElementById("zebraBarcodeConnected").innerHTML = "inside";
+	    console.log('Message from worker:', event.data);
+	};
+	
+	// Start the worker
+	worker.postMessage("hello");
+
+	    
         EloHandHeldBarcodeManager.initialize("onHandheldReady")
         EloSocketMobileManager.initialize("onSocketReady")
         EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
@@ -76,22 +95,22 @@ function setOnReadyCallbacks(){
 
 function initializeZebraScanners(){
      // Create a Blob object
-var blob = new Blob([workerCode], { type: "application/javascript" });
-
-// Create a URL for the Blob
-var blobUrl = URL.createObjectURL(blob);
-
-// Use blobUrl as the worker script URL when creating the Worker
-var worker = new Worker(blobUrl);
-
-// Handle messages from the worker
-worker.onmessage = function(event) {
-	document.getElementById("zebraBarcodeConnected").innerHTML = "inside";
-    console.log('Message from worker:', event.data);
-};
-
-// Start the worker
-worker.postMessage("hello");
+	var blob = new Blob([workerCode], { type: "application/javascript" });
+	
+	// Create a URL for the Blob
+	var blobUrl = URL.createObjectURL(blob);
+	
+	// Use blobUrl as the worker script URL when creating the Worker
+	var worker = new Worker(blobUrl);
+	
+	// Handle messages from the worker
+	worker.onmessage = function(event) {
+		document.getElementById("zebraBarcodeConnected").innerHTML = "inside";
+	    console.log('Message from worker:', event.data);
+	};
+	
+	// Start the worker
+	worker.postMessage("hello");
 }
 
 function onCitizenPrinterReady(serviceBound){
