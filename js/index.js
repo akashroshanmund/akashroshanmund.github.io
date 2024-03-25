@@ -26,6 +26,7 @@ const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
 var workerCode = '
   function initializeZebra() {
+	postMessage("challa");
      EloZebraBarcodeManager.initialize("onZebraReady");
    }
    initializeZebra();
@@ -77,7 +78,8 @@ function initializeZebraScanners(){
      var blobUrl = URL.createObjectURL(blob);
      var worker = new Worker(blobUrl);
      worker.onmessage = function(event) {
-     console.log('Message from worker:', event.data);
+	     document.getElementById("zebraBarcodeConnected").innerHTML = event.data ;
+
      };
    // Start the worker
     worker.postMessage("hello");
