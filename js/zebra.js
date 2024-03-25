@@ -59,7 +59,7 @@ function ZBCRCallback(type, data) {
 }
 
 function ZBCRAttachedCallBack(serialNumber) {
-    document.getElementById('lastAttachedScanner').innerHTML = "Last Attached Scanner: " + serialNumber;
+    document.getElementById('lastScannerAttached').innerHTML = "Last Attached Scanner: " + serialNumber;
 }
 
 function isZebraScannerEnabledBySerialNumber() {
