@@ -74,20 +74,22 @@ function setOnReadyCallbacks(){
 
 
 function initializeZebraScanners(){
-     if(typeof(Worker) !== "undefined"){
-	document.getElementById("zebraBarcodeConnected").innerHTML = "available worker";
-     }else{
-	document.getElementById("zebraBarcodeConnected").innerHTML = "not available worker";
-     }
-     var blob = new Blob([workerCode], { type: "application/javascript" });
-     var blobUrl = URL.createObjectURL(blob);
-     var worker = new Worker(blobUrl);
-     worker.onmessage = function(event) {
-	     document.getElementById("zebraBarcodeConnected").innerHTML = event.data ;
+     // Create a Blob object
+var blob = new Blob([workerCode], { type: "application/javascript" });
 
-     };
-   // Start the worker
-    worker.postMessage("hello");
+// Create a URL for the Blob
+var blobUrl = URL.createObjectURL(blob);
+
+// Use blobUrl as the worker script URL when creating the Worker
+var worker = new Worker(blobUrl);
+
+// Handle messages from the worker
+worker.onmessage = function(event) {
+    console.log('Message from worker:', event.data);
+};
+
+// Start the worker
+worker.postMessage("hello");
 }
 
 function onCitizenPrinterReady(serviceBound){
