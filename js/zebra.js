@@ -17,6 +17,7 @@ document.getElementById("disableAllZebraScanners").addEventListener("click", dis
 document.getElementById("registerZebraAttachedListener").addEventListener("click", registerZebraAttachedListener);
 document.getElementById("unregisterZebraAttachedListener").addEventListener("click", unregisterZebraAttachedListener);
 
+
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
@@ -58,7 +59,7 @@ function ZBCRCallback(type, data) {
 }
 
 function ZBCRAttachedCallBack(serialNumber) {
-    document.getElementById("textField").value = serialNumber;
+    document.getElementById("lastScannerAttached").innerHTML = "Last Attached Scanner: "+ serialNumber;
 }
 
 function isZebraScannerEnabledBySerialNumber() {
