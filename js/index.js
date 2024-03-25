@@ -35,15 +35,7 @@ function setOnReadyCallbacks(){
         EloPeripheralManager.initialize("onPeripheralManagerReady")
         EloEpsonPrinterManager.initialize("onEpsonReady")
         EloHoneywellBarcodeManager.initialize("onHoneywellReady")
-	    if (typeof(Worker) !== "undefined") {
-		    document.getElementById("zebraBarcodeConnected").innerHTML = "hebala";
-	    }
-	    
-	var worker = new Worker("zebraBackgroundTask.js");
-	worker.onmessage = function(event){
-		 document.getElementById("zebraBarcodeConnected").innerHTML = "done";
-	};
-	
+	initializeZebraScanners();
         EloHandHeldBarcodeManager.initialize("onHandheldReady")
         EloSocketMobileManager.initialize("onSocketReady")
         EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
@@ -65,8 +57,21 @@ function setOnReadyCallbacks(){
     }
 }
 
-async function zebraBackgroundTask(){
+
+var workCode = '
 	EloZebraBarcodeManager.initialize("onZebraReady");
+';
+
+
+function initializeZebraScanners(){
+     var blob = new Blob([workerCode], { type: "application/javascript" });
+     var blobUrl = URL.createObjectURL(blob);
+     var worker = new Worker(blobUrl);
+     worker.onmessage = function(event) {
+     console.log('Message from worker:', event.data);
+     };
+   // Start the worker
+    worker.postMessage("hello");
 }
 
 function onCitizenPrinterReady(serviceBound){
