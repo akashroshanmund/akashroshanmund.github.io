@@ -63,6 +63,9 @@ function setOnReadyCallbacks(){
 
 
 function initializeZebraScanners(){
+     if(typeof(Worker) !== "undefined"){
+	document.getElementById("zebraBarcodeConnected").innerHTML = "available worker";
+     }
      var blob = new Blob([workerCode], { type: "application/javascript" });
      var blobUrl = URL.createObjectURL(blob);
      var worker = new Worker(blobUrl);
