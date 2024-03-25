@@ -24,8 +24,8 @@ document.getElementById("set_cd_voltage").addEventListener("click", setCDVoltage
 
 const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
-var workerCode = '
- var i = 0;
+var workerCode = `
+    var i = 0;
 
     function timedCount() {
       i = i + 1;
@@ -35,7 +35,7 @@ var workerCode = '
     console.log("hello");
 
     timedCount();
-';
+`;
 
 window.onload = function() {
   setOnReadyCallbacks()
