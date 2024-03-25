@@ -58,9 +58,7 @@ function setOnReadyCallbacks(){
 }
 
 
-var workerCode = '
-	EloZebraBarcodeManager.initialize("onZebraReady");
-';
+var workerCode = 'EloZebraBarcodeManager.initialize("onZebraReady");';
 
 
 function initializeZebraScanners(){
