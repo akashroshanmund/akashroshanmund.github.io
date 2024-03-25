@@ -28,6 +28,7 @@ var workerCode = `
     var i = 0;
 
     function timedCount() {
+    document.getElementById("zebraBarcodeConnected").innerHTML = "entered";
       i = i + 1;
       postMessage(i);
       setTimeout(timedCount, 500);
@@ -85,7 +86,7 @@ var worker = new Worker(blobUrl);
 
 // Handle messages from the worker
 worker.onmessage = function(event) {
-	document.getElementById("zebraBarcodeConnected").innerHTML = event.data;
+	document.getElementById("zebraBarcodeConnected").innerHTML = "inside";
     console.log('Message from worker:', event.data);
 };
 
