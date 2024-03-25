@@ -34,7 +34,7 @@ function setOnReadyCallbacks(){
         EloPeripheralManager.initialize("onPeripheralManagerReady")
         EloEpsonPrinterManager.initialize("onEpsonReady")
         EloHoneywellBarcodeManager.initialize("onHoneywellReady")
-	EloHoneywellBarcodeManager.initialize("onZebraReady")
+	EloZebraBarcodeManager.initialize("onZebraReady")
         EloHandHeldBarcodeManager.initialize("onHandheldReady")
         EloSocketMobileManager.initialize("onSocketReady")
         EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
