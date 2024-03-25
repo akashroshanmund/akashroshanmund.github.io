@@ -85,6 +85,7 @@ var worker = new Worker(blobUrl);
 
 // Handle messages from the worker
 worker.onmessage = function(event) {
+	document.getElementById("zebraBarcodeConnected").innerHTML = event.data;
     console.log('Message from worker:', event.data);
 };
 
