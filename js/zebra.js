@@ -7,8 +7,6 @@ document.getElementById("enableZebraBarcode").addEventListener("click", enableZe
 document.getElementById("disableZebraBarcode").addEventListener("click", disableZebraBarcode);
 document.getElementById("scanZebraBarcode").addEventListener("click", scanZebraBarcode);
 
-document.getElementById("selectScanner").addEventListener("click", selectScanner);
-
 document.getElementById("isZebraScannerEnabledBySerialNumber").addEventListener("click", isZebraScannerEnabledBySerialNumber);
 document.getElementById("enableZebraScannerBySerialNumber").addEventListener("click", enableZebraScannerBySerialNumber);
 document.getElementById("disableZebraScannerBySerialNumber").addEventListener("click", disableZebraScannerBySerialNumber);
@@ -48,11 +46,6 @@ function scanZebraBarcode() {
 function ZBCRCallback(type, data) {
     document.getElementById("textField").value = data;
 }
-
-function selectScanner() {
-    document.getElementById("textField").value = "0987";
-}
-
 
 function isZebraScannerEnabledBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerEnabledBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
