@@ -24,20 +24,6 @@ document.getElementById("set_cd_voltage").addEventListener("click", setCDVoltage
 
 const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
-var workerCode = `
-    var i = 0;
-
-    function timedCount() {
-    document.getElementById("zebraBarcodeConnected").innerHTML = "entered";
-      i = i + 1;
-      postMessage(i);
-      setTimeout(timedCount, 500);
-    }
-    console.log("hesdfsdfllo");
-
-    timedCount();
-`;
-
 window.onload = function() {
   setOnReadyCallbacks()
 };
@@ -48,26 +34,7 @@ function setOnReadyCallbacks(){
         EloPeripheralManager.initialize("onPeripheralManagerReady")
         EloEpsonPrinterManager.initialize("onEpsonReady")
         EloHoneywellBarcodeManager.initialize("onHoneywellReady")
-	
-
-	    var blob = new Blob([workerCode], { type: "application/javascript" });
-	
-	// Create a URL for the Blob
-	var blobUrl = URL.createObjectURL(blob);
-	
-	// Use blobUrl as the worker script URL when creating the Worker
-	var worker = new Worker(blobUrl);
-	
-	// Handle messages from the worker
-	worker.onmessage = function(event) {
-		document.getElementById("zebraBarcodeConnected").innerHTML = "inside";
-	    console.log('Message from worker:', event.data);
-	};
-	
-	// Start the worker
-	worker.postMessage("hello");
-
-	    
+	EloHoneywellBarcodeManager.initialize("onZebraReady")
         EloHandHeldBarcodeManager.initialize("onHandheldReady")
         EloSocketMobileManager.initialize("onSocketReady")
         EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
@@ -87,30 +54,6 @@ function setOnReadyCallbacks(){
 	in device settings app.
 	*/
     }
-}
-
-
-
-
-
-function initializeZebraScanners(){
-     // Create a Blob object
-	var blob = new Blob([workerCode], { type: "application/javascript" });
-	
-	// Create a URL for the Blob
-	var blobUrl = URL.createObjectURL(blob);
-	
-	// Use blobUrl as the worker script URL when creating the Worker
-	var worker = new Worker(blobUrl);
-	
-	// Handle messages from the worker
-	worker.onmessage = function(event) {
-		document.getElementById("zebraBarcodeConnected").innerHTML = "inside";
-	    console.log('Message from worker:', event.data);
-	};
-	
-	// Start the worker
-	worker.postMessage("hello");
 }
 
 function onCitizenPrinterReady(serviceBound){
