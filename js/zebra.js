@@ -71,7 +71,7 @@ function enableZebraScannerBySerialNumber() {
 }
 
 function disableZebraScannerBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.disableZebraScannerBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
+    document.getElementById("textField").value = true
 }
 
 function scanZebraScannerBySerialNumber() {
