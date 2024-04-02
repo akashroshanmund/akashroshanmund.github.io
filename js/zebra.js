@@ -98,9 +98,6 @@ function getZebraConnectedScanners() {
     
 }
 
-function getZebraEnabledScanners() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
-}
 
 function displaySerialNumber(serialNumber){
     document.getElementById("scannerSerialNumber").innerHTML = serialNumber;
