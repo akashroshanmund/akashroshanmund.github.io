@@ -82,7 +82,7 @@ function disableAllZebraScanners() {
 }
 
 function getZebraEnabledScanners() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraEnabledScanners();
+    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraScannerModel(document.getElementById("scannerSerialNumber").textContent);
 }
 
 function getZebraConnectedScanners() {
