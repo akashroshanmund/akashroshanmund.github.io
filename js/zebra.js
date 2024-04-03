@@ -92,16 +92,7 @@ function getZebraConnectedScanners() {
     var jsonArray = JSON.parse(input);
     jsonArray.forEach(function(jsonObject) {
     // Access keys and values of each object
-    var scannerDetails = "";
-    for (var key in jsonObject) {
-       
-        if (jsonObject.hasOwnProperty(key)) {
-            console.log(key + ": " + jsonObject[key]);
-            scannerDetails += key + ":" + jsonObject[key] +" ";
-        }
-        
-     }
-    addSerialNumber(scannerDetails);
+    addSerialNumber(jsonObject);
    });
 
 }
@@ -111,13 +102,25 @@ function displaySerialNumber(serialNumber){
     document.getElementById("scannerSerialNumber").innerHTML = serialNumber;
 }
 
-function addSerialNumber(serialNumber){
+function addSerialNumber(jsonObject){
+   var scannerDetails = "";
+   var serialNumber = "";
+   for (var key in jsonObject) {
+        if (jsonObject.hasOwnProperty(key)) {
+            console.log(key + ": " + jsonObject[key]);
+            scannerDetails += key + ":" + jsonObject[key] +" \n";
+            if(key == "SerialNumber"){
+                serialNumber = jsonObject[key];
+            }
+        }
+    }
+    
     var ul = document.getElementById('serialNumberList');
     var li = document.createElement('li');
     var span = document.createElement('span');
-    span.textContent = serialNumber;
+    span.textContent = scannerDetails;
     span.className = 'clickable';
-    serialNumber = serialNumber.split(" ")[0].split(":")[1];
+     
     
     span.onclick = function(){
         displaySerialNumber(serialNumber);
