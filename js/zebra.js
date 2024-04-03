@@ -89,7 +89,17 @@ function getZebraConnectedScanners() {
     let input = EloZebraBarcodeManager.getZebraConnectedScanners();
     document.getElementById("textField").value = input
     document.getElementById('serialNumberList').innerHTML = '';
-
+    var jsonArray = JSON.parse(jsonArrayString);
+    jsonArray.forEach(function(jsonObject) {
+    // Access keys and values of each object
+    for (var key in jsonObject) {
+        if (jsonObject.hasOwnProperty(key)) {
+            console.log(key + ": " + jsonObject[key]);
+            addSerialNumber(jsonObject[key]);
+        }
+     }
+   });
+    
     let inputRemoveBrackets = input.slice(1,-1);
     let arrayOfSerialNumber = inputRemoveBrackets.split(",");
     for(let i = 0; i< arrayOfSerialNumber.length; i++){
