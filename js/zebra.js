@@ -93,10 +93,12 @@ function getZebraConnectedScanners() {
     jsonArray.forEach(function(jsonObject) {
     // Access keys and values of each object
     for (var key in jsonObject) {
+        var scannerDetails = "";
         if (jsonObject.hasOwnProperty(key)) {
             console.log(key + ": " + jsonObject[key]);
-            addSerialNumber(jsonObject[key]);
+            scannerDetails += key + " : " + jsonObject[key];
         }
+        addSerialNumber(jsonObject[key]);
      }
    });
 
