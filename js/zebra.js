@@ -89,7 +89,7 @@ function getZebraConnectedScanners() {
     let input = EloZebraBarcodeManager.getConnectedZebraScannersDetails();
     document.getElementById("textField").value = input
     document.getElementById('serialNumberList').innerHTML = '';
-    var jsonArray = JSON.parse(jsonArrayString);
+    var jsonArray = JSON.parse(input);
     jsonArray.forEach(function(jsonObject) {
     // Access keys and values of each object
     for (var key in jsonObject) {
