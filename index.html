@@ -12,6 +12,11 @@
 <body>
 <div class="content">
     <div>
+        <h2>Input/Output:</h2>
+        <input type="text" id="textField" name="textField" size="30" style="margin-bottom:50px;"/><br>
+        <img id="myImage" src="">
+    </div>
+    <div>
         <h2 id = "DevUtilityHeader" style= "color: #FF0000">Device Utility Functions</h2>
         <button id="set_brightness">Set Brightness</button>
         <button id="activate_idle_mode">Activate IDLE Mode</button>
@@ -19,6 +24,8 @@
         <button id="set_lcd_density">Set LCD Density</button>
         <button id="register_usb_listener">Register USB Attachment Listener</button>
         <button id="unregister_usb_listener">Unregister USB Attachment Listener</button>
+        <button id="registerPOSHUBDockListener">Register POSHUB dock Listener</button>
+        <button id="unregisterPOSHUBDockListener">Unregister POSHUB dock Listener</button>
     </div>
     <div>
         <h2 id = "SLKHeader" style= "color: #FF0000">Standard Light Kit (SLK)</h2>
@@ -59,7 +66,7 @@
         <button id="get_bcr_type">Get Honeywell BCR Type</button>
     </div>
     <div>
-        <h2 id = "ZebraHeader" style= "color: #FF0000">Zebra Barcode Reader12</h2>
+        <h2 id = "ZebraHeader" style= "color: #FF0000">Zebra Barcode Reader</h2>
         <h3><span id="zebraBarcodeConnected"></span></h3>
         <button id="initZebraBarcode"> Re-Initialize Zebra BCR</button>
         <button id="registerZebraBarcodeListener">Register Zebra BCR Listener</button>
@@ -69,18 +76,13 @@
         <button id="disableZebraBarcode">Disable Zebra BCR</button>
         <button id="scanZebraBarcode">Scan Zebra BCR</button>
         
-        <h5 id = "scannerSerialNumber">Get The List Of Connected Scanners SerialNumber And Select One Scanner</h5>
-        <h5 id = "lastScannerAttached">Last Scanner State: N/A  </h5>
-
-
-        <button id="registerZebraAttachedListener">Register Scanner State Listener</button>
-        <button id="unregisterZebraAttachedListener">Unregister Scanner State Listener</button>
+        <h5 id = "scannerSerialNumber">Get The List Of Connected Scanners And Select One Scanner </h5>
+        
         <button id="isZebraScannerEnabledBySerialNumber">Is Zebra BCR Connected By SerialNumber</button>
         <button id="enableZebraScannerBySerialNumber">Enable Zebra BCR By SerialNumber</button>
         <button id="disableZebraScannerBySerialNumber">Disable Zebra Scanner By SerialNumber</button>
         <button id="scanZebraScannerBySerialNumber">Scan Zebra Scanner By SerialNumber</button>
-        <button id="getZebraConnectedScanners">Get Zebra Connected Scanners</button>
-        <button id="getZebraEnabledScanners">Get Zebra Enabled Scanners</button>
+        <button id="getConnectedZebraScannersDetails">Get Zebra Connected Scanners</button>
         <button id="disableAllZebraScanners">Disable All Zebra Scanners</button>
         <ul id ="serialNumberList"></ul>
         
@@ -151,7 +153,7 @@
     </div>
 
      <div>
-        <h2 id = "CitizenPrinterHeader" style= "color: #FF0000">Citizen Receipt Printer Plugin (Mar, 2024 MR-31 release)</h2>
+        <h2 id = "CitizenPrinterHeader" style= "color: #FF0000">Citizen Receipt Printer Plugin (Coming Soon)</h2>
         <h3><span id="CitizenPrinterAvailable"></span></h3>
         <button id="searchBTCitizen">1.discover bluetooth devices</button>
         <button id="pairOverBluetoothCitizen">2.Pair Device</button>
@@ -168,10 +170,15 @@
 
 
     <div>
-        <h2>Input/Output:</h2>
-        <input type="text" id="textField" name="textField" size="30"/><br>
-        <img id="myImage" src="">
+        <h2 id = "ProlificAdapterHeader" style= "color: #FF0000">Prolific Adapter Plugin (Mar, 2024 MR-31 release)</h2>
+        <h3><span id="ProlificAdapterAvailable"></span></h3>
+        <button id="prolificInit">init adapter</button>
+        <button id="prolificSetBaudRate">set baud rate</button>
+        <button id="prolificIsConnected">is connected?</button>
+        <button id="prolificWrite">write</button>
+        <button id="prolificEnd">end</button>
     </div>
+
     <div>
         <img id="appmodeqrcode" src="DocsResources/appmodeqrcode.png" alt="noalternate" width="128" height="128" class="center" style="visibility:hidden">
     </div> 
@@ -186,6 +193,7 @@
 <script type="text/javascript" src="js/SocketScanner.js"></script>
 <script type="text/javascript" src="js/StarScale.js"></script>
 <script type="text/javascript" src="js/CitizenPrinter.js"></script>
+<script type="text/javascript" src="js/ProlificAdapter.js"></script>
 
 </body>
 </html>
