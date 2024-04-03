@@ -96,7 +96,7 @@ function getZebraConnectedScanners() {
         var scannerDetails = "";
         if (jsonObject.hasOwnProperty(key)) {
             console.log(key + ": " + jsonObject[key]);
-            scannerDetails += key + " : " + jsonObject[key];
+            scannerDetails += key + " : " + jsonObject[key] +",\n";
         }
         addSerialNumber(jsonObject[key]);
      }
