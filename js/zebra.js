@@ -10,13 +10,8 @@ document.getElementById("isZebraScannerEnabledBySerialNumber").addEventListener(
 document.getElementById("enableZebraScannerBySerialNumber").addEventListener("click", enableZebraScannerBySerialNumber);
 document.getElementById("disableZebraScannerBySerialNumber").addEventListener("click", disableZebraScannerBySerialNumber);
 document.getElementById("scanZebraScannerBySerialNumber").addEventListener("click", scanZebraScannerBySerialNumber);
-document.getElementById("getZebraConnectedScanners").addEventListener("click", getZebraConnectedScanners);
-document.getElementById("getZebraEnabledScanners").addEventListener("click", getZebraEnabledScanners);
+document.getElementById("getConnectedZebraScannersDetails").addEventListener("click", getConnectedZebraScannersDetails);
 document.getElementById("disableAllZebraScanners").addEventListener("click", disableAllZebraScanners);
-
-document.getElementById("registerZebraAttachedListener").addEventListener("click", registerScannerStateListener);
-document.getElementById("unregisterZebraAttachedListener").addEventListener("click", unregisterScannerStateListener);
-
 
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
@@ -28,14 +23,6 @@ function registerZebraBarcodeListener() {
 
 function unregisterZebraBarcodeListener() {
     EloZebraBarcodeManager.unregisterZebraBarcodeListener();
-}
-
-function registerScannerStateListener() {
-    EloZebraBarcodeManager.registerScannerStateListener("ZBCRAttachedCallBack");
-}
-
-function unregisterScannerStateListener() {
-    EloZebraBarcodeManager.unregisterScannerStateListener();
 }
 
 function isZebraBarcodeConnected() {
@@ -58,10 +45,6 @@ function ZBCRCallback(type, data) {
     document.getElementById("textField").value = data;
 }
 
-function ZBCRAttachedCallBack(serialNumber) {
-    document.getElementById('lastScannerAttached').innerHTML = "Last Scanner : " + serialNumber;
-}
-
 function isZebraScannerEnabledBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerEnabledBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
 }
@@ -81,22 +64,17 @@ function disableAllZebraScanners() {
     EloZebraBarcodeManager.disableAllZebraScanners();
 }
 
-function getZebraEnabledScanners() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.getZebraScannerModel(document.getElementById("scannerSerialNumber").textContent);
-}
 
-function getZebraConnectedScanners() {
+function getConnectedZebraScannersDetails() {
     let input = EloZebraBarcodeManager.getConnectedZebraScannersDetails();
     document.getElementById("textField").value = input
     document.getElementById('serialNumberList').innerHTML = '';
     var jsonArray = JSON.parse(input);
     jsonArray.forEach(function(jsonObject) {
-    // Access keys and values of each object
+    // Access each scanner object
     addSerialNumber(jsonObject);
-   });
-
+   }); 
 }
-
 
 function displaySerialNumber(serialNumber){
     document.getElementById("scannerSerialNumber").innerHTML = serialNumber;
@@ -105,26 +83,26 @@ function displaySerialNumber(serialNumber){
 function addSerialNumber(jsonObject){
    var scannerDetails = "";
    var serialNumber = "";
+   // fetch all the key-value
    for (var key in jsonObject) {
         if (jsonObject.hasOwnProperty(key)) {
             console.log(key + ": " + jsonObject[key]);
-            scannerDetails += key + ":" + jsonObject[key] +" \n";
+            scannerDetails += key + ":" + jsonObject[key] +" \n"; //build scanner details
             if(key == "SerialNumber"){
-                serialNumber = jsonObject[key];
+                serialNumber = jsonObject[key]; // set serial number
             }
         }
     }
     
     var ul = document.getElementById('serialNumberList');
     var li = document.createElement('li');
-    li.style.backgroundColor = '#808080';
-    var span = document.createElement('span');
+    li.style.backgroundColor = '#808080';   // set background to grey
+    var span = document.createElement('span'); 
     var spacerItem = document.createElement("li");
-  spacerItem.innerHTML = "&nbsp;";
+    spacerItem.innerHTML = "&nbsp;";  // add a space between two lines
     span.textContent = scannerDetails;
     span.className = 'clickable';
      
-    
     span.onclick = function(){
         displaySerialNumber(serialNumber);
     }
@@ -132,7 +110,6 @@ function addSerialNumber(jsonObject){
     ul.appendChild(li);
     ul.appendChild(spacerItem);
 }
-
 
 
 
