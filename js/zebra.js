@@ -19,10 +19,12 @@ function initZebraBarcode() {
 
 function registerZebraBarcodeListener() {
     EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
+    document.getElementById("textField").value = "registered";
 }
 
 function unregisterZebraBarcodeListener() {
     EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+    document.getElementById("textField").value = "unregistered";
 }
 
 function isZebraBarcodeConnected() {
