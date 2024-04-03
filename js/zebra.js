@@ -118,6 +118,8 @@ function addSerialNumber(jsonObject){
     var ul = document.getElementById('serialNumberList');
     var li = document.createElement('li');
     var span = document.createElement('span');
+    var spacerItem = document.createElement("li");
+  spacerItem.innerHTML = "&nbsp;";
     span.textContent = scannerDetails;
     span.className = 'clickable';
      
@@ -127,6 +129,7 @@ function addSerialNumber(jsonObject){
     }
     li.appendChild(span);
     ul.appendChild(li);
+    ul.appendChild(spacerItem);
 }
 
 
