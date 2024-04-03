@@ -97,7 +97,7 @@ function getZebraConnectedScanners() {
        
         if (jsonObject.hasOwnProperty(key)) {
             console.log(key + ": " + jsonObject[key]);
-            scannerDetails += key + ":" + jsonObject[key] +",\n";
+            scannerDetails += key + ":" + jsonObject[key] +"\n";
         }
         
      }
