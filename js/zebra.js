@@ -19,12 +19,12 @@ function initZebraBarcode() {
 
 function registerZebraBarcodeListener() {
     EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
-    document.getElementById("textField").value = "registered";
+    document.getElementById("textField").value = "register request sent";
 }
 
 function unregisterZebraBarcodeListener() {
     EloZebraBarcodeManager.unregisterZebraBarcodeListener();
-    document.getElementById("textField").value = "unregistered";
+    document.getElementById("textField").value = "unregister request sent";
 }
 
 function isZebraBarcodeConnected() {
@@ -112,6 +112,3 @@ function addSerialNumber(jsonObject){
     ul.appendChild(li);
     ul.appendChild(spacerItem);
 }
-
-
-
