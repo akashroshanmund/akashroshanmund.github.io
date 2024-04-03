@@ -99,13 +99,7 @@ function getZebraConnectedScanners() {
         }
      }
    });
-    
-    let inputRemoveBrackets = input.slice(1,-1);
-    let arrayOfSerialNumber = inputRemoveBrackets.split(",");
-    for(let i = 0; i< arrayOfSerialNumber.length; i++){
-        addSerialNumber(arrayOfSerialNumber[i]);
-    }
-    
+
 }
 
 
