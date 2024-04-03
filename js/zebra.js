@@ -117,7 +117,7 @@ function addSerialNumber(jsonObject){
     
     var ul = document.getElementById('serialNumberList');
     var li = document.createElement('li');
-    li.style.color = #808080;
+    li.style.color = '#808080';
     var span = document.createElement('span');
     var spacerItem = document.createElement("li");
   spacerItem.innerHTML = "&nbsp;";
