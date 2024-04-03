@@ -96,7 +96,7 @@ function getZebraConnectedScanners() {
         var scannerDetails = "";
         if (jsonObject.hasOwnProperty(key)) {
             console.log(key + ": " + jsonObject[key]);
-            scannerDetails += key + " : " + jsonObject[key] +",\n";
+            scannerDetails += key + ":" + jsonObject[key] +",\n";
         }
         addSerialNumber(jsonObject[key]);
      }
@@ -115,6 +115,8 @@ function addSerialNumber(serialNumber){
     var span = document.createElement('span');
     span.textContent = serialNumber;
     span.className = 'clickable';
+    serialNumber = serialNumber.split("\n")[0].split(":")[0];
+    
     span.onclick = function(){
         displaySerialNumber(serialNumber);
     }
