@@ -154,7 +154,6 @@ function onZebraReady(serviceBound){
   }
   else{
     document.getElementById("ZebraHeader").style.color = COLOR_RED
-    document.getElementById("zebraBarcodeConnected").innerHTML = "Re-initializing to Default state! Please wait...";
   }
 }
 
