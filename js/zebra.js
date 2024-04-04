@@ -48,7 +48,7 @@ function ZBCRCallback(type, data) {
 }
 
 function isZebraScannerEnabledBySerialNumber() {
-    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerEnabledBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
+    document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerConnectedBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
 }
 
 function enableZebraScannerBySerialNumber() {
