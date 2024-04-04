@@ -128,7 +128,7 @@ function showSnapiCode(){
      else{                        
          document.getElementById("zebraDataResetBarcode").style.visibility = 'hidden'
          document.getElementById("zebraSnapiBarcode").style.visibility = 'hidden'
-         document.getElementById("showSnapiCode").innerHTML="Show SNAPI Code"
+         document.getElementById("showSnapiCode").innerHTML="Show SNAPI Code Below"
          snapiCodeShown = false
      }
 }
