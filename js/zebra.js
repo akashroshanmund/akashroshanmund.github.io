@@ -12,7 +12,12 @@ document.getElementById("disableZebraScannerBySerialNumber").addEventListener("c
 document.getElementById("scanZebraScannerBySerialNumber").addEventListener("click", scanZebraScannerBySerialNumber);
 document.getElementById("getConnectedZebraScannersDetails").addEventListener("click", getConnectedZebraScannersDetails);
 document.getElementById("disableAllZebraScanners").addEventListener("click", disableAllZebraScanners);
+document.getElementById("showSnapiCode").addEventListener("click", showSnapiCode);
 
+// varialbe declaration
+let snapiCodeShown = false
+
+// function for each api defined
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
@@ -111,4 +116,19 @@ function addSerialNumber(jsonObject){
     li.appendChild(span);
     ul.appendChild(li);
     ul.appendChild(spacerItem);
+}
+
+function showSnapiCode(){           
+     if (!snapiCodeShown){                   
+         document.getElementById("zebraDataResetBarcode").style.visibility = 'visible'
+         document.getElementById("zebraSnapiBarcode").style.visibility = 'visible'
+         document.getElementById("showSnapiCode").innerHTML="Hide SNAPI Code"
+         snapiCodeShown = true
+     }
+     else{                        
+         document.getElementById("zebraDataResetBarcode").style.visibility = 'hidden'
+         document.getElementById("zebraSnapiBarcode").style.visibility = 'hidden'
+         document.getElementById("showSnapiCode").innerHTML="Show SNAPI Code"
+         snapiCodeShown = false
+     }
 }
