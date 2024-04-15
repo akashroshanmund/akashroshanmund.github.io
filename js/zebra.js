@@ -68,7 +68,7 @@ function scanZebraScannerBySerialNumber() {
     EloZebraBarcodeManager.scanZebraScannerBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
 }
 function disableAllZebraScanners() {
-    EloZebraBarcodeManager.disableAllZebraScanners();
+    document.getElementById("textField").value = EloZebraBarcodeManager.disableAllZebraScanners();
 }
 
 
