@@ -31,13 +31,10 @@ window.onload = function() {
 function setOnReadyCallbacks(){
 
     try{
-        EloPeripheralManager.initialize("onPeripheralManagerReady")
-        EloEpsonPrinterManager.initialize("onEpsonReady")
-        EloHoneywellBarcodeManager.initialize("onHoneywellReady")
+       
+       
 	EloZebraBarcodeManager.initialize("onZebraReady")
-        EloHandHeldBarcodeManager.initialize("onHandheldReady")
-        EloSocketMobileManager.initialize("onSocketReady")
-        EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
+       
     }catch(error){
 	/*
 	 Make sure Webview Hardware Access toggle is enabled
