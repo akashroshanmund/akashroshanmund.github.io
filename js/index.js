@@ -146,7 +146,7 @@ function onZebraReady(serviceBound){
     document.getElementById("textField").value = input
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
     if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
     } else {
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
