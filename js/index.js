@@ -140,14 +140,16 @@ function onHoneywellReady(serviceBound){
 
 function onZebraReady(serviceBound){
   if (serviceBound === "true"){
-	   EloZebraBarcodeManager.initZebraBarcode();
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
     let input = EloZebraBarcodeManager.getConnectedZebraScannersDetails();
     document.getElementById("textField").value = input
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
+    if(input.length < 5){
+	    EloZebraBarcodeManager.initZebraBarcode();
+    }
     if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
     } else {
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
