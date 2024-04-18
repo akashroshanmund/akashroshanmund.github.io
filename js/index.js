@@ -140,6 +140,7 @@ function onHoneywellReady(serviceBound){
 
 function onZebraReady(serviceBound){
   if (serviceBound === "true"){
+	   EloZebraBarcodeManager.initZebraBarcode();
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
     let input = EloZebraBarcodeManager.getConnectedZebraScannersDetails();
