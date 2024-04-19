@@ -33,7 +33,7 @@ function setOnReadyCallbacks(){
     try{
        
        
-	EloZebraBarcodeManager.initialize("onZebraReady")
+	EloZebraBarcodeManager.initializeSticky("onZebraReady")
        
     }catch(error){
 	/*
@@ -149,7 +149,7 @@ function onZebraReady(serviceBound){
 	    
     }
     if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
     } else {
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
