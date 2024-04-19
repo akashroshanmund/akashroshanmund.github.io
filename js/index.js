@@ -146,10 +146,10 @@ function onZebraReady(serviceBound){
     document.getElementById("textField").value = input
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
     if(input.length < 5){
-	    EloZebraBarcodeManager.initZebraBarcode();
+	    
     }
     if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
     } else {
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
