@@ -149,7 +149,7 @@ function onZebraReady(serviceBound){
 	    
     }
     if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
     } else {
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
