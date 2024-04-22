@@ -73,7 +73,7 @@ function disableAllZebraScanners() {
 
 
 function getConnectedZebraScannersDetails() {
-    let input = EloZebraBarcodeManager.getConnectedZebraScannersDetails();
+    let input = EloZebraBarcodeManager.getAvailableZebraScannersDetails();
     document.getElementById("textField").value = input
     document.getElementById('serialNumberList').innerHTML = '';
     var jsonArray = JSON.parse(input);
