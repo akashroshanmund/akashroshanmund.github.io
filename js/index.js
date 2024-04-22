@@ -33,7 +33,7 @@ function setOnReadyCallbacks(){
     try{
        
        
-	EloZebraBarcodeManager.initEntireLifeCycle("onZebraReady")
+	EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReady")
        
     }catch(error){
 	/*
