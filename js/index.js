@@ -141,18 +141,16 @@ function onHoneywellReady(serviceBound){
 function onZebraReady(serviceBound){
   if (serviceBound === "true"){
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
-    var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
-    let input = EloZebraBarcodeManager.getAvailableZebraScannersDetails();
-    document.getElementById("textField").value = input
+   // var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
+
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
-    if(input.length < 5){
-	    
-    }
-    if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
-    } else {
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
-    }
+
+	  document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
+    // if(true){
+        
+    // } else {
+    //     document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
+    // }
   }
   else{
     document.getElementById("ZebraHeader").style.color = COLOR_RED
