@@ -55,6 +55,10 @@ function ZBCRCallback(type, data) {
     document.getElementById("textField").value = data;
 }
 
+function statusCallback(status, serialnumber) {
+    document.getElementById("textField").value = status +" "+serialnumber;
+}
+
 function isZebraScannerEnabledBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerConnectedBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
 }
@@ -131,7 +135,7 @@ function showSnapiCode(){
      else{                        
          document.getElementById("zebraDataResetBarcode").style.visibility = 'hidden'
          document.getElementById("zebraSnapiBarcode").style.visibility = 'hidden'
-         document.getElementById("showSnapiCode").innerHTML="Show SNAPI Code Below"
+         document.getElementById("showSnapiCode").innerHTML="Show SNAPI Code "
          snapiCodeShown = false
      }
 }
