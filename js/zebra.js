@@ -24,11 +24,14 @@ function initZebraBarcode() {
 
 function registerZebraBarcodeListener() {
     EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
+     EloZebraBarcodeManager.registerZebraScannerStatusListener("statusCallback");
     document.getElementById("textField").value = "register request sent";
 }
 
 function unregisterZebraBarcodeListener() {
     EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+    EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+    
     document.getElementById("textField").value = "unregister request sent";
 }
 
