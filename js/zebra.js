@@ -56,7 +56,7 @@ function ZBCRCallback(type, data) {
 }
 
 function statusCallback(status, serialnumber) {
-    document.getElementById("textField").value = status +" "+serialnumber;
+    document.getElementById("textField").value = status;
 }
 
 function isZebraScannerEnabledBySerialNumber() {
