@@ -30,7 +30,7 @@ function registerZebraBarcodeListener() {
 
 function unregisterZebraBarcodeListener() {
     EloZebraBarcodeManager.unregisterZebraBarcodeListener();
-    EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+    EloZebraBarcodeManager.unregisterZebraScannerStatusListener();
     
     document.getElementById("textField").value = "unregister request sent";
 }
