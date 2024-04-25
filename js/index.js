@@ -31,7 +31,7 @@ window.onload = function() {
 function setOnReadyCallbacks(){
 
     try{
-	EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReady")
+	EloZebraBarcodeManager.initialize("onZebraReady")
        
     }catch(error){
 	/*
