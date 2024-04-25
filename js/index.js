@@ -28,6 +28,12 @@ window.onload = function() {
   setOnReadyCallbacks()
 };
 
+window.onunload = function() {
+  EloZebraBarcodeManager.disableAllZebraScanners();
+	EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+	
+};
+
 function setOnReadyCallbacks(){
 
     try{
