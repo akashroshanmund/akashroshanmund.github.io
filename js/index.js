@@ -140,6 +140,8 @@ function onZebraReady(serviceBound){
   if (serviceBound === "true"){
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
+	  EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
+     EloZebraBarcodeManager.registerZebraScannerStatusListener("statusCallback");
 
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
 
