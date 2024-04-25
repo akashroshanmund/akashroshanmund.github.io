@@ -142,7 +142,8 @@ function onZebraReady(serviceBound){
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
 
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
-
+ let input = EloZebraBarcodeManager.getAvailableZebraScannersDetails();
+    document.getElementById("textField").value = input
 	 
      if(zebraAvailable == true){
          document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
