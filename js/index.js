@@ -32,7 +32,7 @@ window.onload = function() {
 function setOnReadyCallbacks(){
 
     try{
-	EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReady")
+	EloZebraBarcodeManager.initialize("onZebraReady")
        
     }catch(error){
 	/*
@@ -141,14 +141,14 @@ function onZebraReady(serviceBound){
   if (serviceBound === "true"){
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
-	  EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
-     EloZebraBarcodeManager.registerZebraScannerStatusListener("statusCallback");
+	);
+   
 
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
 
 	 
      if(zebraAvailable == true){
-         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
+         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connect";
      } else {
          document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
      }
