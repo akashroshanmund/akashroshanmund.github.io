@@ -24,6 +24,7 @@ function initZebraBarcode() {
 
 function registerZebraBarcodeListener() {
     EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
+    EloZebraBarcodeManager.registerZebraScannerStatusListener("statusCallBack");
 
     document.getElementById("textField").value = "register request sent";
 }
