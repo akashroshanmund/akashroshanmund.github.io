@@ -36,12 +36,12 @@ function unregisterZebraBarcodeListener() {
 }
 
 function registerZebraStatusListener() {
-    EloZebraBarcodeManager.registerZebraStatusListener("ZBCRStatusCallBack");
+    EloZebraBarcodeManager.registerZebraScannerStatusListener("ZBCRStatusCallBack");
     document.getElementById("textField").value = "status register request sent";
 }
 
 function unregisterZebraStatusListener() {
-    EloZebraBarcodeManager.unregisterZebraStatusListener();
+    EloZebraBarcodeManager.unregisterZebraBarcodeListener();
     document.getElementById("textField").value = "status unregister request sent";
 }
 
