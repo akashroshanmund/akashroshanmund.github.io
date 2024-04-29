@@ -217,7 +217,12 @@ function onHoneywellReady(serviceBound){
 
 function onZebraReady(serviceBound){
   if (serviceBound === "true"){
-    EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReadyEntireLifeCycle")
+    
+    try{
+        EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReadyEntireLifeCycle")
+    }catch(error){
+    }
+
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
