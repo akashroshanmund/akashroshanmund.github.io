@@ -41,7 +41,7 @@ function registerZebraStatusListener() {
 }
 
 function unregisterZebraStatusListener() {
-    EloZebraBarcodeManager.unregisterZebraBarcodeListener();
+    EloZebraBarcodeManager.unregisterZebraScannerStatusListener();
     document.getElementById("textField").value = "status unregister request sent";
 }
 
