@@ -61,11 +61,11 @@ function scanZebraBarcode() {
     EloZebraBarcodeManager.scanZebraBarcode();
 }
 
-function ZBCRCallback(status, serialNumber) {
+function ZBCRStatusCallBack(status, serialNumber) {
     document.getElementById("textField").value = status + "  "+ serialNumber;
 }
-ZBCRStatusCallBack
-function ZBCRStatusCallBack(type, data) {
+
+function ZBCRCallback(type, data) {
     document.getElementById("textField").value = data;
 }
 function isZebraScannerEnabledBySerialNumber() {
