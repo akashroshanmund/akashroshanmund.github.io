@@ -216,7 +216,16 @@ function onHoneywellReady(serviceBound){
 }
 
 function onZebraReady(serviceBound){
+	
   if (serviceBound === "true"){
+	    try{
+        EloStarPrinterManager.initializeEntireLificycle("onStarPrinterReady")
+    }catch(error){
+	/*
+	Make sure Star Hardware Access toggle is enabled
+	in device settings app and Elo device on correct firmware.
+	*/
+    }
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
