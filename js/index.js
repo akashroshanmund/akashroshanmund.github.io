@@ -30,32 +30,7 @@ window.onload = function() {
 
 function setOnReadyCallbacks(){
 
-    try{
-        EloPeripheralManager.initialize("onPeripheralManagerReady")
-    }catch(error){
-	/*
-	 Make sure Webview Hardware Access toggle is enabled
-	 from Eloview or device settings app and Elo device on correct firmware.
-	*/
-    }
-
-    try{
-        EloEpsonPrinterManager.initialize("onEpsonReady")
-    }catch(error){
-        /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
-    }
-
-    try{
-        EloHoneywellBarcodeManager.initialize("onHoneywellReady")
-    }catch(error){
-       /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
-    }
+  
 
     try{
 	EloZebraBarcodeManager.initialize("onZebraReady")
@@ -66,59 +41,6 @@ function setOnReadyCallbacks(){
         */
     }
 
-    try{
-        EloHandHeldBarcodeManager.initialize("onHandheldReady")
-    }catch(error){
-       /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
-    }
-
-    try{
-        EloSocketMobileManager.initialize("onSocketReady")
-    }catch(error){
-       /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
-    }
-
-    try{
-        EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
-    }catch(error){
-        /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
-    }
-
-    try{
-        EloProlificAdapterManager.initialize("onProlificAdapterReady")
-    }catch(error){
-       /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
-    }
-
-    try{
-        EloStarPrinterManager.initialize("onStarPrinterReady")
-    }catch(error){
-	/*
-	Make sure Star Hardware Access toggle is enabled
-	in device settings app and Elo device on correct firmware.
-	*/
-    }
-
-    try{
-        EloStarScaleManager.initialize("onScaleReady")
-    }catch(error){
-        /*
-        Make sure Star Hardware Access toggle is enabled
-        in device settings app and Elo device on correct firmware.
-        */
-    }
 }
 
 function onProlificAdapterReady(serviceBound){
