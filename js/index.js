@@ -132,7 +132,7 @@ function onHoneywellReady(serviceBound){
   }
 }
 
-function onZebraReady(serviceBound){
+function onZebraReadyEntireLifeCycle(serviceBound){
 	
   if (serviceBound === "true"){
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
