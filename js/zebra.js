@@ -56,7 +56,7 @@ function scanZebraBarcode() {
 }
 
 function ZBCRStatusCallBack(status, serialNumber) {
-    document.getElementById("textField").value = status + "  "+ serialNumber;
+    document.getElementById("textField").value = status + "  "+ serialNumber + " isInteger"+ Number.isInteger(status);
 }
 
 function ZBCRCallback(type, data) {
