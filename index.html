@@ -65,16 +65,31 @@
         <button id="is_bcr_on">Is Honeywell BCR Enabled?</button>
         <button id="get_bcr_type">Get Honeywell BCR Type</button>
     </div>
-    <div>
+     <div>
         <h2 id = "ZebraHeader" style= "color: #FF0000">Zebra Barcode Reader</h2>
         <h3><span id="zebraBarcodeConnected"></span></h3>
         <button id="initZebraBarcode"> Re-Initialize Zebra BCR</button>
         <button id="registerZebraBarcodeListener">Register Zebra BCR Listener</button>
         <button id="unregisterZebraBarcodeListener">Unregister Zebra BCR Listener</button>
+         <button id="registerZebraStatusListener">Register Zebra Status Listener</button>
+        <button id="unregisterZebraStatusListener">Unregister Zebra Status Listener</button>
         <button id="isZebraBarcodeConnected">Is Zebra BCR Connected?</button>
         <button id="enableZebraBarcode">Enable Zebra BCR</button>
         <button id="disableZebraBarcode">Disable Zebra BCR</button>
         <button id="scanZebraBarcode">Scan Zebra BCR</button>
+
+        <h5 id = "scannerSerialNumber">Get The List Of Connected Scanners And Select One Scanner</h5>
+
+        <button id="isZebraScannerEnabledBySerialNumber">Is Zebra BCR Connected By SerialNumber</button>
+        <button id="enableZebraScannerBySerialNumber">Enable Zebra BCR By SerialNumber</button>
+        <button id="disableZebraScannerBySerialNumber">Disable Zebra Scanner By SerialNumber</button>
+        <button id="scanZebraScannerBySerialNumber">Scan Zebra Scanner By SerialNumber</button>
+        <button id="getAvailableZebraScannersDetails">Get Zebra Available Scanners</button>
+        <button id="getActiveZebraScannersDetails">Get Zebra Active Scanners</button>
+        <button id="disableAllZebraScanners">Disable All Zebra Scanners</button>
+        <button id="showSnapiCode">Show SNAPI Code Below</button>
+        <ul id ="serialNumberList"></ul>
+
     </div>
     <div>
         <h2 id = "HandheldHeader" style= "color: #FF0000">Handheld Barcode Reader</h2>
