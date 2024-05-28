@@ -33,14 +33,9 @@ function setOnReadyCallbacks(){
   
 
     try{
-	EloZebraBarcodeManager.initialize("onZebraReady")
+        EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReadyEntireLifeCycle")
     }catch(error){
-       /*
-         Make sure Webview Hardware Access toggle is enabled
-         from Eloview or device settings app and Elo device on correct firmware.
-        */
     }
-
 }
 
 function onProlificAdapterReady(serviceBound){
@@ -140,15 +135,11 @@ function onHoneywellReady(serviceBound){
 function onZebraReady(serviceBound){
 	
   if (serviceBound === "true"){
-try{
-        EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReadyEntireLifeCycle")
-    }catch(error){
-    }
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
     var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
     console.log("Zebra BCR is Available [" + zebraAvailable + "]");
     if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected ";
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected 12 ";
     } else {
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
