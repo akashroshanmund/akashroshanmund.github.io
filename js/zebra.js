@@ -13,6 +13,7 @@ document.getElementById("enableZebraScannerBySerialNumber").addEventListener("cl
 document.getElementById("disableZebraScannerBySerialNumber").addEventListener("click", disableZebraScannerBySerialNumber);
 document.getElementById("scanZebraScannerBySerialNumber").addEventListener("click", scanZebraScannerBySerialNumber);
 document.getElementById("getActiveZebraScannersDetails").addEventListener("click", getActiveZebraScannersDetails);
+document.getElementById("getAvailableZebraScannersDetails").addEventListener("click", getAvailableZebraScannersDetails);
 document.getElementById("disableAllZebraScanners").addEventListener("click", disableAllZebraScanners);
 document.getElementById("showSnapiCode").addEventListener("click", showSnapiCode);
 
