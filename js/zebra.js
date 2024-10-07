@@ -60,7 +60,7 @@ function ZBCRStatusCallBack(status, serialNumber) {
     document.getElementById("textField").value = status + "  "+ serialNumber + " isInteger"+ Number.isInteger(status);
 }
 
-function ZBCRCallback(type, data, serialNumber) {
+function ZBCRCallback(type, data, serialNumber, test) {
     document.getElementById("textField").value = data +" " +serialNumber;
 }
 function isZebraScannerEnabledBySerialNumber() {
