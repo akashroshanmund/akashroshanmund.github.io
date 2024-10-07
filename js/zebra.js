@@ -61,7 +61,7 @@ function ZBCRStatusCallBack(status, serialNumber) {
 }
 
 function ZBCRCallback(type, data, serialNumber, test) {
-    document.getElementById("textField").value = data +" " +serialNumber;
+    document.getElementById("textField").value = data +" test" +test;
 }
 function isZebraScannerEnabledBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerConnectedBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
