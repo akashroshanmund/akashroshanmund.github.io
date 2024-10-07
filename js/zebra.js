@@ -60,8 +60,8 @@ function ZBCRStatusCallBack(status, serialNumber) {
     document.getElementById("textField").value = status + "  "+ serialNumber + " isInteger"+ Number.isInteger(status);
 }
 
-function ZBCRCallback(type, data) {
-    document.getElementById("textField").value = data;
+function ZBCRCallback(type, data, serialNumber) {
+    document.getElementById("textField").value = data +" " +serialNumber;
 }
 function isZebraScannerEnabledBySerialNumber() {
     document.getElementById("textField").value = EloZebraBarcodeManager.isZebraScannerConnectedBySerialNumber(document.getElementById("scannerSerialNumber").textContent);
