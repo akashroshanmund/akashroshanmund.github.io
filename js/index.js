@@ -42,7 +42,7 @@ function setOnReadyCallbacks(){
     }
 
 	try{
-	EloPeripheralManager.initialize("onPeripheralReady")
+	EloPeripheralManager.initializeWithView("onPeripheralReady")
     }catch(error){
        /*
          Make sure Webview Hardware Access toggle is enabled
