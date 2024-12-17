@@ -169,9 +169,6 @@ function onZebraReady(serviceBound){
         document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
     }
   }
-  else{
-    document.getElementById("ZebraHeader").style.color = COLOR_RED
-  }
 }
 
 function onHandheldReady(serviceBound){
