@@ -26,7 +26,7 @@ function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
 }
 
-function uninitZebraBarcode() {
+function uninitialize() {
     EloZebraBarcodeManager.uninitialize();
 }
 function registerZebraBarcodeListener() {
