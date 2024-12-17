@@ -1,5 +1,6 @@
 // Set up button click listener
 document.getElementById("initZebraBarcode").addEventListener("click", initZebraBarcode);
+document.getElementById("uninitialize").addEventListener("click", uninitialize);
 document.getElementById("registerZebraBarcodeListener").addEventListener("click", registerZebraBarcodeListener);
 document.getElementById("unregisterZebraBarcodeListener").addEventListener("click", unregisterZebraBarcodeListener);
 document.getElementById("registerZebraStatusListener").addEventListener("click", registerZebraStatusListener);
@@ -23,6 +24,10 @@ let snapiCodeShown = false
 // function for each api defined
 function initZebraBarcode() {
     EloZebraBarcodeManager.initZebraBarcode();
+}
+
+function uninitZebraBarcode() {
+    EloZebraBarcodeManager.uninitialize();
 }
 function registerZebraBarcodeListener() {
     EloZebraBarcodeManager.registerZebraBarcodeListener("ZBCRCallback");
