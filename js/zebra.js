@@ -7,6 +7,7 @@ document.getElementById("enableZebraBarcode").addEventListener("click", enableZe
 document.getElementById("disableZebraBarcode").addEventListener("click", disableZebraBarcode);
 document.getElementById("scanZebraBarcode").addEventListener("click", scanZebraBarcode);
 
+
 //APIs supported by A12 MR-13 onwards
 document.getElementById("registerZebraStatusListener").addEventListener("click", registerZebraStatusListener);
 document.getElementById("unregisterZebraStatusListener").addEventListener("click", unregisterZebraStatusListener);
