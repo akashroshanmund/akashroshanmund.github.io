@@ -17,25 +17,26 @@
         <img id="myImage" src="">
     </div>
     <div>
-        <h2 id = "DevUtilityHeader" style= "color: #FF0000">Device Utility Functions</h2>
+        <h2 id = "DevUtilityHeader" style= "color: #FF0000">Device Utility Functions (MR-28+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <button id="set_brightness">Set Brightness</button>
         <button id="activate_idle_mode">Activate IDLE Mode</button>
         <button id="get_lcd_density">Get LCD Density</button>
         <button id="set_lcd_density">Set LCD Density</button>
+        <button id="get_custom_values">Get EloView Custom Values</button>
         <button id="register_usb_listener">Register USB Attachment Listener</button>
         <button id="unregister_usb_listener">Unregister USB Attachment Listener</button>
         <button id="registerPOSHUBDockListener">Register POSHUB dock Listener</button>
         <button id="unregisterPOSHUBDockListener">Unregister POSHUB dock Listener</button>
     </div>
     <div>
-        <h2 id = "SLKHeader" style= "color: #FF0000">Standard Light Kit (SLK)</h2>
+        <h2 id = "SLKHeader" style= "color: #FF0000">Standard Light Kit (SLK) (MR-28+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1)</h2>
         <button id="enable_slk">Enable SLK</button>
         <button id="disable_slk">Disable SLK</button>
         <button id="slk_color_red">SLK Red</button>
         <button id="slk_color_green">SLK Green</button>
     </div>
     <div>
-        <h2 id = "SLK2Header" style= "color: #FF0000">Standard Light Kit Gen 2 (July, 2023 MR-28 release)</h2>
+        <h2 id = "SLK2Header" style= "color: #FF0000">Standard Light Kit Gen 2 (MR-28+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1)</h2>
         <button id="get_light">Get SLK Light</button>
         <button id="set_red_light">Set SLK Red</button>
         <button id="set_green_light">Set SLK Green</button>
@@ -48,14 +49,14 @@
         <button id="stop_flashing">Stop Flashing</button>
     </div>
     <div>
-        <h2 id = "CDHeader" style= "color: #FF0000">Cash Drawer Functions (July, 2023 MR-28 release)</h2>
+        <h2 id = "CDHeader" style= "color: #FF0000">Cash Drawer Functions (MR-28+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1)</h2>
         <button id="open_cd">Open Cash Drawer</button>
         <button id="is_cd_open">Is Cash Drawer Open?</button>
         <button id="get_cd_voltage">Get Cash Drawer Voltage</button>
         <button id="set_cd_voltage">Set Cash Drawer Voltage</button>
     </div>
     <div>
-        <h2 id = "HoneywellHeader" style= "color: #FF0000">Honeywell Barcode Reader</h2>
+        <h2 id = "HoneywellHeader" style= "color: #FF0000">Honeywell Barcode Reader (MR-29+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <h3><span id="honeywellBarcodeAvailable"></span></h3>
         <button id="init_honeywell_barcode">Re-Init Honeywell BCR</button>
         <button id="register_listener_honeywell">Register Honeywell BCR Listener</button>
@@ -65,11 +66,11 @@
         <button id="is_bcr_on">Is Honeywell BCR Enabled?</button>
         <button id="get_bcr_type">Get Honeywell BCR Type</button>
     </div>
+
     <div>
-        <h2 id = "ZebraHeader" style= "color: #FF0000">Zebra Barcode Reader</h2>
+        <h2 id = "ZebraHeader" style= "color: #FF0000">Zebra Barcode Reader (MR-29+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <h3><span id="zebraBarcodeConnected"></span></h3>
         <button id="initZebraBarcode"> Re-Initialize Zebra BCR</button>
-         <button id="uninitialize"> Unnitialize Zebra BCR</button>
         <button id="registerZebraBarcodeListener">Register Zebra BCR Listener</button>
         <button id="unregisterZebraBarcodeListener">Unregister Zebra BCR Listener</button>
          <button id="registerZebraStatusListener">Register Zebra Status Listener</button>
@@ -78,8 +79,9 @@
         <button id="enableZebraBarcode">Enable Zebra BCR</button>
         <button id="disableZebraBarcode">Disable Zebra BCR</button>
         <button id="scanZebraBarcode">Scan Zebra BCR</button>
-
-        <h5 id = "scannerSerialNumber">Get The List Of Connected Scanners And Select One Scanners</h5>
+        
+        <!-- Please use below apis if multiple scanners are connected to the device -->
+        <h5 id = "scannerSerialNumber">Get The List Of Connected Scanners And Select One Scanner (Multi-Scanner API support implemented in MR-13+ Android 12 I-Series 4.1, MR-3+ M100P/7inP)</h5>
 
         <button id="isZebraScannerEnabledBySerialNumber">Is Zebra BCR Connected By SerialNumber</button>
         <button id="enableZebraScannerBySerialNumber">Enable Zebra BCR By SerialNumber</button>
@@ -88,9 +90,9 @@
         <button id="getAvailableZebraScannersDetails">Get Zebra Available Scanners</button>
         <button id="getActiveZebraScannersDetails">Get Zebra Active Scanners</button>
         <button id="disableAllZebraScanners">Disable All Zebra Scanners</button>
+        <button id="VerifyZebraInbuiltScannerSerialNumber">Verify Inbuilt Scanner SerialNumber</button>
         <button id="showSnapiCode">Show SNAPI Code Below</button>
         <ul id ="serialNumberList"></ul>
-
     </div>
     <div>
         <h2 id = "HandheldHeader" style= "color: #FF0000">Handheld Barcode Reader</h2>
@@ -102,7 +104,7 @@
         <button id="scanHandheldHandsFree">Scan Handheld Hands Free</button>
     </div>
     <div>
-        <h2 id = "EpsonHeader" style= "color: #FF0000">Epson Printer Plugin</h2>
+        <h2 id = "EpsonHeader" style= "color: #FF0000">Epson Printer Plugin (MR-29+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <h3><span id="printerAvailable"></span></h3>
         <button id="updatePrinterList">Update Printer List</button>
         <button id="queryPrinterList">Query Printer List</button>
@@ -117,7 +119,7 @@
         <button id="getDrawerStatus">Is Cash Drawer Open?</button>
     </div> 
     <div>
-        <h2 id = "SocketHeader" style= "color: #FF0000">Socket Mobile Plugin</h2>
+        <h2 id = "SocketHeader" style= "color: #FF0000">Socket Mobile Plugin (MR-29+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <h3><span id="scannerAvailable"></span></h3>
         <button id="initService">1.Init Service</button>
         <button id="showScanCode">2.Show Pair Code Below</button>
@@ -130,7 +132,7 @@
         <button id="disableScanning">Disable Scanning</button>
     </div>
      <div>
-        <h2 id = "StarPrinterHeader" style= "color: #FF0000">Star Printer Plugin</h2>
+        <h2 id = "StarPrinterHeader" style= "color: #FF0000">Star Printer Plugin (MR-29+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <h3><span id="StarPrinterAvailable"></span></h3>
         <button id="queryStarPrinterList">Query Printer List</button>
         <button id="setStarPrinter">Set Printer</button>
@@ -146,7 +148,7 @@
     </div>
 
     <div>
-        <h2 id = "StarScaleHeader" style= "color: #FF0000">Star Scale Plugin (July, 2023 MR-28 release)</h2>
+        <h2 id = "StarScaleHeader" style= "color: #FF0000">Star Scale Plugin (MR-28+ Android 10 I-Series 4.0, all Android 12 I-Series 4.1, MR-4+ M100P/7inP)</h2>
         <h3><span id="StarScaleAvailable"></span></h3>
         <button id="beginScan">Scan For Scales</button>
         <button id="connectScale">Connect Scale</button>
@@ -157,7 +159,7 @@
         <button id="disconnectScale">Disconnect Scale</button>               
     </div>
 
-     <div>
+<!--     <div>
         <h2 id = "CitizenPrinterHeader" style= "color: #FF0000">Citizen Receipt Printer Plugin (Coming Soon)</h2>
         <h3><span id="CitizenPrinterAvailable"></span></h3>
         <button id="searchBTCitizen">1.discover bluetooth devices</button>
@@ -170,18 +172,44 @@
         <button id="printReceipt1Citizen">print receipt 1</button>
         <button id="printReceipt2Citizen">print receipt 2</button>
         <button id="printImageCitizen">print image</button>
-        <button id="disconnectCitizen">disconnect printer</button>       
-    </div>
-
+        <button id="disconnectCitizen">disconnect printer</button>
+    </div> -->
 
     <div>
-        <h2 id = "ProlificAdapterHeader" style= "color: #FF0000">Prolific Adapter Plugin (Mar, 2024 MR-31 release)</h2>
+        <h2 id = "ProlificAdapterHeader" style= "color: #FF0000">Prolific PL2303 Adapter Plugin (MR-31+ Android 10 I-Series 4.0, MR-13+ Android 12 I-Series 4.1, MR-3+ M100P/7inP)</h2>
         <h3><span id="ProlificAdapterAvailable"></span></h3>
         <button id="prolificInit">init adapter</button>
         <button id="prolificSetBaudRate">set baud rate</button>
         <button id="prolificIsConnected">is connected?</button>
         <button id="prolificWrite">write</button>
         <button id="prolificEnd">end</button>
+    </div>
+
+    <div>
+        <h2 id = "ProlificGAdapterHeader" style= "color: #FF0000">Prolific PL2303G Adapter Plugin (MR-31+ Android 10 I-Series 4.0, MR-13+ Android 12 I-Series 4.1 Value, MR-14+ Android 12 I-Series 4.1 Performance, MR-3+ M100P/7inP)</h2>
+        <h3><span id="ProlificGAdapterAvailable"></span></h3>
+        <button id="prolificGInit">init adapter</button>
+        <button id="prolificGSetBaudRate">set baud rate</button>
+        <button id="prolificGIsConnected">is connected?</button>
+        <button id="prolificGWrite">write</button>
+        <button id="prolificGEnd">end</button>
+    </div>
+
+    <div>
+        <h2 id = "pr1000Header" style= "color: #FF0000">PR1000 Elo Printer</h2>
+        <h3><span id="PR1000Available"></span></h3>
+        <button id="PR1000_getUSBPrinters">search USB printers</button>
+        <button id="PR1000_getWifiPrinters">search wifi printers</button>
+        <button id="PR1000_connect">connect</button> 
+<!--
+        <button id="PR1000_status_test">get printer status</button>
+-->
+        <button id="PR1000_text_test">text print test</button>
+        <button id="PR1000_beep_test">beep test</button>
+        <button id="PR1000_drawer_test">cash drawer test</button>
+        <button id="PR1000_barcode_test">barcode test</button>
+        <button id="PR1000_image_test">image test</button>
+        <button id="PR1000_disconnect">disconnect</button>
     </div>
 
     <div>
@@ -203,8 +231,12 @@
 <script type="text/javascript" src="js/star.js"></script>
 <script type="text/javascript" src="js/SocketScanner.js"></script>
 <script type="text/javascript" src="js/StarScale.js"></script>
-<script type="text/javascript" src="js/CitizenPrinter.js"></script>
+<!-- <script type="text/javascript" src="js/CitizenPrinter.js"></script> -->
 <script type="text/javascript" src="js/ProlificAdapter.js"></script>
+<script type="text/javascript" src="js/ProlificGAdapter.js"></script>
+<script type="text/javascript" src="js/PR1000Printer.js"></script>
 
 </body>
 </html>
+
+
