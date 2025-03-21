@@ -461,6 +461,16 @@ function unregisterUSBListener() {
     EloPeripheralManager.unregisterUSBListener();
 }
 
+function registerPOSHUBDockListener() {
+     document.getElementById("textField").value = "registerPOSHUBDockListener";
+     EloPeripheralManager.registerPOSHUBDockListener("POSHUBCallback");
+ }
+ 
+ function unregisterPOSHUBDockListener() {
+     document.getElementById("textField").value = "unregisterPOSHUBDockListener";
+     EloPeripheralManager.unregisterPOSHUBDockListener();
+ }
+
 function activateBCR() {
     EloPeripheralManager.activeBcr();
 }
