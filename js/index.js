@@ -23,6 +23,9 @@ document.getElementById("get_cd_voltage").addEventListener("click", getCDVoltage
 document.getElementById("set_cd_voltage").addEventListener("click", setCDVoltage);
 document.getElementById("get_custom_values").addEventListener("click", getCustomValues);
 
+document.getElementById("registerPOSHUBDockListener").addEventListener("click", registerPOSHUBDockListener);
+document.getElementById("unregisterPOSHUBDockListener").addEventListener("click", unregisterPOSHUBDockListener);
+
 
 const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
