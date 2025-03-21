@@ -21,11 +21,9 @@ document.getElementById("open_cd").addEventListener("click", openCD);
 document.getElementById("is_cd_open").addEventListener("click", isCDOpen);
 document.getElementById("get_cd_voltage").addEventListener("click", getCDVoltage);
 document.getElementById("set_cd_voltage").addEventListener("click", setCDVoltage);
+document.getElementById("get_custom_values").addEventListener("click", getCustomValues);
 
-document.getElementById("registerPOSHUBDockListener").addEventListener("click", registerPOSHUBDockListener);
-document.getElementById("unregisterPOSHUBDockListener").addEventListener("click", unregisterPOSHUBDockListener);
-
-const COLOR_RED = '#FF0001'
+const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
 window.onload = function() {
   setOnReadyCallbacks()
@@ -33,7 +31,32 @@ window.onload = function() {
 
 function setOnReadyCallbacks(){
 
-   
+    try{
+        EloPeripheralManager.initialize("onPeripheralManagerReady")
+    }catch(error){
+	/*
+	 Make sure Webview Hardware Access toggle is enabled
+	 from Eloview or device settings app and Elo device on correct firmware.
+	*/
+    }
+
+    try{
+        EloHoneywellBarcodeManager.initialize("onHoneywellReady")
+    }catch(error){
+       /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+        EloEpsonPrinterManager.initialize("onEpsonReady")
+    }catch(error){
+        /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
 
     try{
 	EloZebraBarcodeManager.initialize("onZebraReady")
@@ -44,8 +67,71 @@ function setOnReadyCallbacks(){
         */
     }
 
-	try{
-	EloPeripheralManager.initialize("onPeripheralManagerReady")
+    try{
+        EloHandHeldBarcodeManager.initialize("onHandheldReady")
+    }catch(error){
+       /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+        EloSocketMobileManager.initialize("onSocketReady")
+    }catch(error){
+       /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+        EloCitizenPrinterManager.initialize("onCitizenPrinterReady")
+    }catch(error){
+        /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+        EloProlificAdapterManager.initialize("onProlificAdapterReady")
+    }catch(error){
+       /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+        EloProlificGAdapterManager.initialize("onProlificGAdapterReady")
+    }catch(error){
+       /*
+         Make sure Webview Hardware Access toggle is enabled
+         from Eloview or device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+        EloStarPrinterManager.initialize("onStarPrinterReady")
+    }catch(error){
+	/*
+	Make sure Star Hardware Access toggle is enabled
+	in device settings app and Elo device on correct firmware.
+	*/
+    }
+
+    try{
+        EloStarScaleManager.initialize("onScaleReady")
+    }catch(error){
+        /*
+        Make sure Star Hardware Access toggle is enabled
+        in device settings app and Elo device on correct firmware.
+        */
+    }
+
+    try{
+       EloPR1000PrinterManager.initialize("onPR1000PrinterReady")
     }catch(error){
        /*
          Make sure Webview Hardware Access toggle is enabled
@@ -55,7 +141,24 @@ function setOnReadyCallbacks(){
 
 }
 
+function onPR1000PrinterReady(serviceBound){
+    if (serviceBound === "true"){
+        document.getElementById("pr1000Header").style.color = COLOR_GREEN
+        if (EloPR1000PrinterManager.getConnectedDevice() != ""){
+            document.getElementById("PR1000Available").innerHTML = "Printer Connected"
+        }
+        else{
+            document.getElementById("PR1000Available").innerHTML = "Printer Offline"
+        }
+    }
+    else{
+        document.getElementById("PR1000Available").innerHTML = "Printer Offline"
+        document.getElementById("pr1000Header").style.color = COLOR_RED
+    }
+}
+
 function onProlificAdapterReady(serviceBound){
+    console.log("onProlificAdapterReady: " + serviceBound)
     if (serviceBound === "true"){
         document.getElementById("ProlificAdapterHeader").style.color = COLOR_GREEN
     }
@@ -64,15 +167,21 @@ function onProlificAdapterReady(serviceBound){
     }
 }
 
+function onProlificGAdapterReady(serviceBound){
+    console.log("onProlificGAdapterReady: " + serviceBound)
+    if (serviceBound === "true"){
+        document.getElementById("ProlificGAdapterHeader").style.color = COLOR_GREEN
+    }
+    else{
+        document.getElementById("ProlificGAdapterHeader").style.color = COLOR_RED
+    }
+}
+
 function onCitizenPrinterReady(serviceBound){
+    console.log("onCitizenPrinterReady: " + serviceBound)
     if (serviceBound === "true"){
     	document.getElementById("CitizenPrinterHeader").style.color = COLOR_GREEN
-        if (EloCitizenPrinterManager.printerCheck() == CMP_SUCCESS){
-            document.getElementById("CitizenPrinterAvailable").innerHTML = "Printer Ready"
-	}
-        else{
-            document.getElementById("CitizenPrinterAvailable").innerHTML = "Printer Offline"
-        }
+        checkAvailableDevices();
     }
     else{
 	document.getElementById("CitizenPrinterHeader").style.color = COLOR_RED
@@ -81,15 +190,10 @@ function onCitizenPrinterReady(serviceBound){
 }
 
 function onSocketReady(serviceBound){
+    console.log("onSocketReady: " + serviceBound)
     if (serviceBound === "true"){
     	document.getElementById("SocketHeader").style.color = COLOR_GREEN
-								//attempting to restore UI upon page refresh in web browser apps (GMS/android home mode)
-	if (EloSocketMobileManager.getDeviceName() === ''){
-   	    document.getElementById("scannerAvailable").innerHTML = "Scanner Unavailable"
-	}
-	else{
-   	    document.getElementById("scannerAvailable").innerHTML = "Scanner Ready"
-	}
+        checkAvailableDevices();
     }
     else{
        document.getElementById("SocketHeader").style.color = COLOR_RED
@@ -97,6 +201,7 @@ function onSocketReady(serviceBound){
 }
 
 function onScaleReady(serviceBound){
+    console.log("onScaleReady: " + serviceBound)
     if (serviceBound === "true"){
     	document.getElementById("StarScaleHeader").style.color = COLOR_GREEN
         restoreScale()          //attempting to restore scale data upon page refresh in web browser apps (GMS/android home mode)
@@ -107,72 +212,60 @@ function onScaleReady(serviceBound){
 }
 
 function onEpsonReady(serviceBound){
-  if (serviceBound === "true"){
-      document.getElementById("EpsonHeader").style.color = COLOR_GREEN
-
-      var printerAvailable = EloEpsonPrinterManager.isPrinterConnected();
-      console.log("Epson Printer is Available [" + printerAvailable + "]");
-      if(printerAvailable == true){
-          document.getElementById("printerAvailable").innerHTML = "Printer is Connected";
-      } else {
-          document.getElementById("printerAvailable").innerHTML = "Printer is Disconnected";
-      }
-  }
-  else{
-      document.getElementById("EpsonHeader").style.color = COLOR_RED
-  }
+    console.log("onEpsonReady: " + serviceBound)
+    if (serviceBound === "true"){
+        document.getElementById("EpsonHeader").style.color = COLOR_GREEN
+        checkAvailableDevices();
+    }
+    else{
+        document.getElementById("EpsonHeader").style.color = COLOR_RED
+    }
 }
 
 function onStarPrinterReady(serviceBound){
-  if (serviceBound === "true"){
-    document.getElementById("StarPrinterHeader").style.color = COLOR_GREEN
-  }
-  else{
-    document.getElementById("StarPrinterHeader").style.color = COLOR_RED
-  }
+    console.log("onStarPrinterReady: " + serviceBound)
+    if (serviceBound === "true"){
+      document.getElementById("StarPrinterHeader").style.color = COLOR_GREEN
+    }
+    else{
+      document.getElementById("StarPrinterHeader").style.color = COLOR_RED
+    }
 }
 
 function onHoneywellReady(serviceBound){
-  if (serviceBound === "true"){
-      document.getElementById("HoneywellHeader").style.color = COLOR_GREEN
-      var waitTime = 3000;
-      setTimeout(function() {
-          EloHoneywellBarcodeManager.activeBcr();
-          var honeywellAvailable = EloHoneywellBarcodeManager.isBcrOn();
-          console.log("Honeywell BCR is Available [" + honeywellAvailable + "]");
-          if(honeywellAvailable == true){
-            document.getElementById("honeywellBarcodeAvailable").innerHTML = "Honeywell is Connected";
-          } else {
-            document.getElementById("honeywellBarcodeAvailable").innerHTML = "Honeywell is Disconnected";
-          }
-      }, waitTime);
-
-
-  }
-  else{
-    document.getElementById("HoneywellHeader").style.color = COLOR_RED
-  }
+    console.log("onHoneywellReady: " + serviceBound)
+    if (serviceBound === "true"){
+        document.getElementById("HoneywellHeader").style.color = COLOR_GREEN
+        var waitTime = 3000;
+        setTimeout(function() {
+            EloHoneywellBarcodeManager.activeBcr();
+            checkAvailableDevices();
+        }, waitTime);
+    }
+    else{
+      document.getElementById("HoneywellHeader").style.color = COLOR_RED
+    }
 }
 
 function onZebraReady(serviceBound){
+  console.log("onZebraReady: " + serviceBound)
   if (serviceBound === "true"){
-	  try{
+    // initializeEntireLifeCycle is the initialization method available in A12, MR-13 onwards. This will keep the SDK instance alive throughout the app lifecycle
+    try{
         EloZebraBarcodeManager.initializeEntireLifeCycle("onZebraReadyEntireLifeCycle")
     }catch(error){
     }
-   
+
     document.getElementById("ZebraHeader").style.color = COLOR_GREEN
-    var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
-    console.log("Zebra BCR is Available [" + zebraAvailable + "]");
-    if(zebraAvailable == true){
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
-    } else {
-        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
-    }
+    checkAvailableDevices();
+  }
+  else{
+    document.getElementById("ZebraHeader").style.color = COLOR_RED
   }
 }
 
 function onHandheldReady(serviceBound){
+  console.log("onHandheldReady: " + serviceBound)
   if (serviceBound === "true"){
     document.getElementById("HandheldHeader").style.color = COLOR_GREEN
     document.getElementById("HandheldUtilityHeader").style.color = COLOR_GREEN
@@ -183,6 +276,7 @@ function onHandheldReady(serviceBound){
 }
 
 function onPeripheralManagerReady(serviceBound){
+  console.log("onPeripheralManagerReady: " + serviceBound)
   if (serviceBound === "true"){
     document.getElementById("DevUtilityHeader").style.color = COLOR_GREEN
     document.getElementById("SLKHeader").style.color = COLOR_GREEN
@@ -363,16 +457,6 @@ function unregisterUSBListener() {
     EloPeripheralManager.unregisterUSBListener();
 }
 
-function registerPOSHUBDockListener() {
-    document.getElementById("textField").value = "registerPOSHUBDockListener";
-    EloPeripheralManager.registerPOSHUBDockListener("POSHUBCallback");
-}
-
-function unregisterPOSHUBDockListener() {
-    document.getElementById("textField").value = "unregisterPOSHUBDockListener";
-    EloPeripheralManager.unregisterPOSHUBDockListener();
-}
-
 function activateBCR() {
     EloPeripheralManager.activeBcr();
 }
@@ -404,4 +488,93 @@ function setScreenDensity() {
     } 
     var density = parseInt(value, 10);
     EloPeripheralManager.setLcdDensity(density)
+}
+
+function getCustomValues() {
+    document.getElementById("textField").value = EloPeripheralManager.getCustomValues();
+}
+
+function checkAvailableDevices() {
+    try {
+        var honeywellAvailable = EloHoneywellBarcodeManager.isBcrOn();
+        console.log("Honeywell BCR is Available [" + honeywellAvailable + "]");
+        if(honeywellAvailable == true){
+            document.getElementById("honeywellBarcodeAvailable").innerHTML = "Honeywell is Connected";
+        } else {
+            document.getElementById("honeywellBarcodeAvailable").innerHTML = "Honeywell is Disconnected";
+        }
+    } catch (error) {
+        document.getElementById("honeywellBarcodeAvailable").innerHTML = "Honeywell is Disconnected";
+    }
+    try {
+        var zebraAvailable = EloZebraBarcodeManager.isZebraBarcodeConnected();
+        console.log("Zebra BCR is Available [" + zebraAvailable + "]");
+        if(zebraAvailable == true){
+            document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Connected";
+        } else {
+            document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
+        }
+    } catch (error) {
+        document.getElementById("zebraBarcodeConnected").innerHTML = "Zebra Barcode Reader is Disconnected";
+    }
+/*
+    try {
+        if (EloCitizenPrinterManager.printerCheck() == CMP_SUCCESS){
+            document.getElementById("CitizenPrinterAvailable").innerHTML = "Printer Ready"
+        }
+        else{
+            document.getElementById("CitizenPrinterAvailable").innerHTML = "Printer Offline"
+        }
+    } catch (error) {
+        document.getElementById("CitizenPrinterAvailable").innerHTML = "Printer Offline"
+    }
+*/
+    try {
+        var printerAvailable = EloEpsonPrinterManager.isPrinterConnected();
+        console.log("Epson Printer is Available [" + printerAvailable + "]");
+        if(printerAvailable == true){
+            document.getElementById("printerAvailable").innerHTML = "Printer is Connected";
+        } else {
+            document.getElementById("printerAvailable").innerHTML = "Printer is Disconnected";
+        }
+    } catch (error) {
+        document.getElementById("printerAvailable").innerHTML = "Printer is Disconnected";
+    }
+    try {
+        if (EloSocketMobileManager.getDeviceName() === ''){
+            document.getElementById("scannerAvailable").innerHTML = "Scanner Unavailable"
+        }
+        else{
+            document.getElementById("scannerAvailable").innerHTML = "Scanner Ready"
+        }
+    } catch (error) {
+        document.getElementById("scannerAvailable").innerHTML = "Scanner Ready"
+    }
+}
+
+function restoreScale(){
+    try {
+        if (EloStarScaleManager.isScaleCreated() && localStorage.getItem("scaleConnected") === "true"){
+            scaleConnected = true
+            document.getElementById("StarScaleAvailable").innerHTML = "Scale Connected"
+            let savedScaleInfo = localStorage.getItem("scaleInfo")
+            if (savedScaleInfo !== null){
+                try{
+                    scaleInfo = new ScaleInfo(JSON.parse(savedScaleInfo))
+                }catch(error){
+                     document.getElementById("textField").value = "Could not restore scale data"
+                }
+            }
+        }
+        else{
+            document.getElementById("StarScaleAvailable").innerHTML = "Scale Disconnected"
+            EloStarScaleManager.destroyScale()
+            scaleInfo = ""
+            scaleConnected = false
+            localStorage.removeItem("scaleConnected")
+            localStorage.removeItem("scaleInfo")
+        }
+    } catch (error) {
+        document.getElementById("StarScaleAvailable").innerHTML = "Scale Disconnected"
+    }
 }
