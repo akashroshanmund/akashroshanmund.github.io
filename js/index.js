@@ -23,6 +23,7 @@ document.getElementById("get_cd_voltage").addEventListener("click", getCDVoltage
 document.getElementById("set_cd_voltage").addEventListener("click", setCDVoltage);
 document.getElementById("get_custom_values").addEventListener("click", getCustomValues);
 
+
 const COLOR_RED = '#FF0000'
 const COLOR_GREEN = '#008000'
 window.onload = function() {
