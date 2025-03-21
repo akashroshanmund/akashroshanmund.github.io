@@ -465,6 +465,9 @@ function registerPOSHUBDockListener() {
      document.getElementById("textField").value = "registerPOSHUBDockListener";
      EloPeripheralManager.registerPOSHUBDockListener("POSHUBCallback");
  }
+function POSHUBCallback(available) {
+    document.getElementById("textField").value = "Dock State: "+ available;
+}
  
  function unregisterPOSHUBDockListener() {
      document.getElementById("textField").value = "unregisterPOSHUBDockListener";
